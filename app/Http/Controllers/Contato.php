@@ -4,20 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Disponibilidades extends Controller
+class Contato extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id, $name)
+    public function index()
     {
-        //return 'okidokdisp' . $id;
-        //return view('disponibilidades')->with('id',$id);
-        //return view('disponibilidades', compact('id'));
-        return view('disponibilidades', compact('id','name'));
-
+        $people = ['Marta', 'Miguel', 'Lena', 'Pedro'];
+        return view('contato',compact('people'));
     }
 
     /**
@@ -27,7 +24,7 @@ class Disponibilidades extends Controller
      */
     public function create()
     {
-    //
+        //
     }
 
     /**
