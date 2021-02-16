@@ -72,7 +72,7 @@ Route::get('/read', function (){
     $infraestruturas = Infraestrutura::all();
 
     foreach ($infraestruturas as $infraestrutura) {
-        return $infraestrutura->infraestruturas_referencia_orait;
+        return $infraestrutura->referencia_orait;
     }
 });
 
@@ -81,7 +81,7 @@ Route::get('/find', function (){
 
     $infraestruturas = Infraestrutura::find(3);
 
-    return $infraestruturas->infraestruturas_referencia_orait;
+    return $infraestruturas->referencia_orait;
 });
 
 
@@ -108,8 +108,8 @@ Route::get('/findmore', function (){
 
     $infraestruturas = new Infraestrutura;
 
-    $infraestruturas->infraestruturas_referencia_orait = 'new';
-    $infraestruturas->infraestruturas_nome_operador = 'cool';
+    $infraestruturas->referencia_orait = 'new';
+    $infraestruturas->nome_operador = 'cool';
 
     $infraestruturas->save();
 
@@ -120,8 +120,8 @@ Route::get('/basicinsert', function (){
 
     $infraestruturas = Infraestrutura::find(12);
 
-    $infraestruturas->infraestruturas_referencia_orait = 'new 7';
-    $infraestruturas->infraestruturas_nome_operador = 'cool 7';
+    $infraestruturas->referencia_orait = 'new 7';
+    $infraestruturas->nome_operador = 'cool 7';
 
     $infraestruturas->save();
 
@@ -130,14 +130,14 @@ Route::get('/basicinsert', function (){
 
 Route::get('/create', function (){
 
-    Infraestrutura::create(['infraestruturas_referencia_orait'=>'laravel', 'infraestruturas_nome_operador'=>'okidoki']);
+    Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
 
 });
 
 
 Route::get('/update', function (){
 
-    Infraestrutura::where('id',9)->where('is_admin', 0)->update(['infraestruturas_referencia_orait'=>'updade', 'infraestruturas_nome_operador'=>'okidoki']);
+    Infraestrutura::where('id',9)->where('is_admin', 0)->update(['referencia_orait'=>'updade', 'nome_operador'=>'okidoki']);
 
 });
 
@@ -231,6 +231,5 @@ Route::get('/restore', function(){
 Route::get('/forcedelete', function(){
 
     Infraestrutura::onlyTrashed()->where('is_admin',0)->forceDelete();
-
 
 });
