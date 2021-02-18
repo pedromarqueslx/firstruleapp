@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function infraestrutura(){
+
+        //user_id
+        return $this->hasOne('App\Models\Infraestrutura');
+
+    }
+
 }

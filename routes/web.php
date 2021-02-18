@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Infraestrutura;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -170,7 +171,7 @@ Route::get('/delete2', function (){
 //Database Raw SQL Queries
 Route::get('/insert', function(){
 
-    DB::insert('insert into infraestruturas(infraestruturas_referencia_orait,infraestruturas_nome_operador) values(?, ?)', ['first','second']);
+    DB::insert('insert into infraestruturas(referencia_orait, nome_operador) values(?, ?)', ['first','second']);
 
 });
 
@@ -233,3 +234,22 @@ Route::get('/forcedelete', function(){
     Infraestrutura::onlyTrashed()->where('is_admin',0)->forceDelete();
 
 });
+
+
+
+
+
+
+
+
+
+
+//Eloquent Relationships
+// One to One relationship
+
+Route::get('/user/{id}/infraestrutura', function($id){
+
+    return User::find($id)->infraestrutura->referencia_orait;
+
+});
+
