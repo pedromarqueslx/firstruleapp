@@ -217,14 +217,12 @@ Route::get('/readsoftdelete', function(){
 
     return $infraestrutura;
 
-
 });
 
 
 Route::get('/restore', function(){
 
     Infraestrutura::withTrashed()->where('is_admin',0)->restore();
-
 
 });
 
@@ -244,6 +242,8 @@ Route::get('/forcedelete', function(){
 
 
 
+
+
 //Eloquent Relationships
 // One to One relationship
 
@@ -253,3 +253,23 @@ Route::get('/user/{id}/infraestrutura', function($id){
 
 });
 
+
+Route::get('/infraestrutura/{id}/user', function($id){
+
+    return Infraestrutura::find($id)->user->email;
+
+});
+
+//One to Many relationship
+
+Route::get('/infraestruturas/{id}', function($id){
+
+    $user = User::find($id);
+
+    foreach ($user->infraestruturas as $infraestrutura){
+
+        echo $infraestrutura->referencia_orait;
+
+    }
+
+});
