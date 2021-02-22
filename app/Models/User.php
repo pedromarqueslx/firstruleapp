@@ -48,9 +48,26 @@ class User extends Authenticatable
 
     }
 
+    public function municipio(){
+
+        //user_id
+        return $this->hasOne('App\Models\Municipio');
+
+    }
+
     public function infraestruturas(){
 
         return $this->hasMany('App\Models\Infraestrutura');
     }
+
+    public function roles(){
+
+        // To customize table names and columns
+        //return $this->belongsToMany('App\Models\Role', 'role_user', 'user_id','role_id');
+
+        return $this->belongsToMany('App\Models\Role')->withPivot('created_at');
+
+    }
+
 
 }

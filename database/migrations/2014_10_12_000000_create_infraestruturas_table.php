@@ -26,7 +26,7 @@ class CreateInfraestruturasTable extends Migration
             $table->string('responsavel_operador')->nullable($value = true);
             $table->string('telefone_responsavel_operador')->nullable($value = true);
             $table->string('email_responsavel_operador')->nullable($value = true);
-            $table->string('municipio')->nullable($value = true);
+            $table->string('municipio_id')->nullable($value = true);
             $table->string('municipio_cartas')->nullable($value = true);
             $table->string('cvp_entrada')->nullable($value = true);
             $table->string('cvp_entrada_ponto_entrada')->nullable($value = true);

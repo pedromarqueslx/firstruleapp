@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Municipio;
 use App\Models\Infraestrutura;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -105,7 +106,7 @@ Route::get('/findmore', function (){
 
 });
 
-/*Route::get('/basicinsert', function (){
+Route::get('/basicinsert', function (){
 
     $infraestruturas = new Infraestrutura;
 
@@ -114,26 +115,93 @@ Route::get('/findmore', function (){
 
     $infraestruturas->save();
 
+});
+
+
+/*Route::get('/update', function (){
+    $infraestruturas = Infraestrutura::find(5);
+    $infraestruturas->referencia_orait = 'new 7';
+    $infraestruturas->nome_operador = 'cool 7';
+    $infraestruturas->save();
 });*/
 
 
-Route::get('/basicinsert', function (){
 
-    $infraestruturas = Infraestrutura::find(12);
+Route::get('/infraestruturas/create', function (){
 
-    $infraestruturas->referencia_orait = 'new 7';
-    $infraestruturas->nome_operador = 'cool 7';
+    $user = User::findOrFail(1);
 
-    $infraestruturas->save();
+    $infraestrutura = new Infraestrutura([
+        'referencia_orait'=>'reforait',
+        'nome_operador'=>'operator',
+        'contribuinte_operador'=>'contribuinte_operador',
+        'morada_operador'=>'morada_operador',
+        'telefone_operador'=>'telefone_operador',
+        'email_operador'=>'email_operador',
+        'referencia_operador'=>'referencia_operador',
+        'responsavel_operador'=>'responsavel_operador',
+        'telefone_responsavel_operador'=>'telefone_responsavel_operador',
+        'email_responsavel_operador'=>'email_responsavel_operador',
+        'municipio_id' =>'municipio_id',
+        'municipio_cartas'=>'municipio_cartas',
+        'cvp_entrada'=>'cvp_entrada',
+        'cvp_entrada_ponto_entrada'=>'cvp_entrada_ponto_entrada',
+        'cvp_entrada_ponto_ligacao'=>'cvp_entrada_ponto_ligacao',
+        'cvp_entrada_folga'=>'cvp_entrada_folga',
+        'cvp_saida'=>'cvp_saida',
+        'cvp_saida_ponto_entrada'=>'cvp_saida_ponto_entrada',
+        'cvp_saida_ponto_ligacao'=>'cvp_saida_ponto_ligacao',
+        'cvp_saida_folga'=>'cvp_saida_folga',
+        'tipo_tubo_ponto_entrada'=>'tipo_tubo_ponto_entrada',
+        'tipo_cabo'=>'tipo_cabo',
+        'seccao_cabo'=>'seccao_cabo',
+        'cabo_identificacao'=>'cabo_identificacao',
+        'cabo_designacao_cabos'=>'cabo_designacao_cabos',
+        'cabo_capacidade'=>'cabo_capacidade',
+        'cabo_peso'=>'cabo_peso',
+        'cabo_diametro'=>'cabo_diametro',
+        'cabo_seccao'=>'cabo_seccao',
+        'cvp_identificacao_equipamento'=>'cvp_identificacao_equipamento',
+        'cvp_cabo_ligacao'=>'cvp_cabo_ligacao',
+        'cvp_tipo_equipamento'=>'cvp_tipo_equipamento',
+        'cvp_dimensoes'=>'cvp_dimensoes',
+        'cvp_peso'=>'cvp_peso',
+        'cvp'=>'cvp',
+        'observacoes'=>'observacoes',
+        'metragem'=>'metragem',
+        'quantidade_equipamentos'=>'quantidade_equipamentos',
+        'quantidade_pontos_entrada'=>'quantidade_pontos_entrada',
+        'observacoes_resposta'=>'observacoes_resposta',
+        'resposta'=>'resposta',
+        'data_resposta_licenciamento'=>'2021-02-22',
+        'data_pedido_acesso'=>'2021-02-22',
+        'data_resposta_acesso'=>'2021-02-22',
+        'data_pedido_cadastro'=>'2021-02-22',
+        'data_resposta_cadastro'=>'2021-02-22'
+        ]);
+
+    $user->infraestrutura()->save($infraestrutura);
+
+    //Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
 
 });
 
 
-Route::get('/create', function (){
+Route::get('/municipios/create', function (){
 
-    Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
+    $user = User::findOrFail(1);
+
+    $municipio = new Municipio([
+        'nome'=>'nome',
+        'email'=>'email',
+        'contribuinte'=>'contribuinte'
+    ]);
+
+    $user->municipio()->save($municipio);
 
 });
+
+
 
 
 Route::get('/update', function (){
@@ -253,15 +321,16 @@ Route::get('/user/{id}/infraestrutura', function($id){
 
 });
 
-
+/*
 Route::get('/infraestrutura/{id}/user', function($id){
 
     return Infraestrutura::find($id)->user->email;
 
 });
+*/
 
 //One to Many relationship
-
+/*
 Route::get('/infraestruturas/{id}', function($id){
 
     $user = User::find($id);
@@ -271,5 +340,59 @@ Route::get('/infraestruturas/{id}', function($id){
         echo $infraestrutura->referencia_orait;
 
     }
+});
+*/
+
+
+Route::get('/user/{id}/role', function($id){
+
+    $user = User::find($id)->roles()->orderBy('id','desc')->get();
+
+    return $user;
+
+    /* foreach ($user->roles as $role){
+
+        return $role->id;
+
+    }*/
 
 });
+
+
+// Acess pivot table
+
+Route::get('user/pivot', function(){
+
+    $user = User::find(1);
+
+    foreach ($user->roles as $role){
+
+        echo $role->pivot->created_at;
+
+    }
+});
+
+
+
+//
+
+Route::get('/infraestruturas/{id}/municipio', function($id){
+
+    //$municipio = Municipio::find($id)->infraestruturas()->orderBy('id','desc')->get();
+
+    $municipio = Municipio::find($id);
+
+    //return $municipio;
+
+    foreach ($municipio->infraestruturas as $infraestrutura){
+
+        return $infraestrutura->id;
+
+    }
+
+
+});
+
+
+
+
