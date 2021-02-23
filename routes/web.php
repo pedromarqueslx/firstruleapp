@@ -127,64 +127,8 @@ Route::get('/basicinsert', function (){
 
 
 
-Route::get('/infraestruturas/create', function (){
 
-    $user = User::findOrFail(1);
 
-    $infraestrutura = new Infraestrutura([
-        'referencia_orait'=>'reforait',
-        'nome_operador'=>'operator',
-        'contribuinte_operador'=>'contribuinte_operador',
-        'morada_operador'=>'morada_operador',
-        'telefone_operador'=>'telefone_operador',
-        'email_operador'=>'email_operador',
-        'referencia_operador'=>'referencia_operador',
-        'responsavel_operador'=>'responsavel_operador',
-        'telefone_responsavel_operador'=>'telefone_responsavel_operador',
-        'email_responsavel_operador'=>'email_responsavel_operador',
-        'municipio_id' =>'municipio_id',
-        'municipio_cartas'=>'municipio_cartas',
-        'cvp_entrada'=>'cvp_entrada',
-        'cvp_entrada_ponto_entrada'=>'cvp_entrada_ponto_entrada',
-        'cvp_entrada_ponto_ligacao'=>'cvp_entrada_ponto_ligacao',
-        'cvp_entrada_folga'=>'cvp_entrada_folga',
-        'cvp_saida'=>'cvp_saida',
-        'cvp_saida_ponto_entrada'=>'cvp_saida_ponto_entrada',
-        'cvp_saida_ponto_ligacao'=>'cvp_saida_ponto_ligacao',
-        'cvp_saida_folga'=>'cvp_saida_folga',
-        'tipo_tubo_ponto_entrada'=>'tipo_tubo_ponto_entrada',
-        'tipo_cabo'=>'tipo_cabo',
-        'seccao_cabo'=>'seccao_cabo',
-        'cabo_identificacao'=>'cabo_identificacao',
-        'cabo_designacao_cabos'=>'cabo_designacao_cabos',
-        'cabo_capacidade'=>'cabo_capacidade',
-        'cabo_peso'=>'cabo_peso',
-        'cabo_diametro'=>'cabo_diametro',
-        'cabo_seccao'=>'cabo_seccao',
-        'cvp_identificacao_equipamento'=>'cvp_identificacao_equipamento',
-        'cvp_cabo_ligacao'=>'cvp_cabo_ligacao',
-        'cvp_tipo_equipamento'=>'cvp_tipo_equipamento',
-        'cvp_dimensoes'=>'cvp_dimensoes',
-        'cvp_peso'=>'cvp_peso',
-        'cvp'=>'cvp',
-        'observacoes'=>'observacoes',
-        'metragem'=>'metragem',
-        'quantidade_equipamentos'=>'quantidade_equipamentos',
-        'quantidade_pontos_entrada'=>'quantidade_pontos_entrada',
-        'observacoes_resposta'=>'observacoes_resposta',
-        'resposta'=>'resposta',
-        'data_resposta_licenciamento'=>'2021-02-22',
-        'data_pedido_acesso'=>'2021-02-22',
-        'data_resposta_acesso'=>'2021-02-22',
-        'data_pedido_cadastro'=>'2021-02-22',
-        'data_resposta_cadastro'=>'2021-02-22'
-        ]);
-
-    $user->infraestrutura()->save($infraestrutura);
-
-    //Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
-
-});
 
 
 Route::get('/municipios/create', function (){
@@ -202,6 +146,15 @@ Route::get('/municipios/create', function (){
 });
 
 
+Route::get('/municipios/update', function (){
+
+    $municipio = Municipio::whereUserId(1)->first();
+
+    $municipio->nome = 'oeiras';
+
+    $municipio->save();
+
+});
 
 
 Route::get('/update', function (){
@@ -376,6 +329,11 @@ Route::get('user/pivot', function(){
 
 //
 
+/*
+ *
+ *
+ *
+
 Route::get('/infraestruturas/{id}/municipio', function($id){
 
     //$municipio = Municipio::find($id)->infraestruturas()->orderBy('id','desc')->get();
@@ -393,6 +351,73 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
 
 });
 
+*/
 
 
 
+
+// FirstRule Application
+
+//Route::get('/infraestruturas/create', function (){
+
+    //$user = User::findOrFail(1);
+
+    /*$infraestrutura = new Infraestrutura([
+        'referencia_orait'=>'reforait',
+        'nome_operador'=>'operator',
+        'contribuinte_operador'=>'contribuinte_operador',
+        'morada_operador'=>'morada_operador',
+        'telefone_operador'=>'telefone_operador',
+        'email_operador'=>'email_operador',
+        'referencia_operador'=>'referencia_operador',
+        'responsavel_operador'=>'responsavel_operador',
+        'telefone_responsavel_operador'=>'telefone_responsavel_operador',
+        'email_responsavel_operador'=>'email_responsavel_operador',
+        'municipio_id' =>'municipio_id',
+        'municipio_cartas'=>'municipio_cartas',
+        'cvp_entrada'=>'cvp_entrada',
+        'cvp_entrada_ponto_entrada'=>'cvp_entrada_ponto_entrada',
+        'cvp_entrada_ponto_ligacao'=>'cvp_entrada_ponto_ligacao',
+        'cvp_entrada_folga'=>'cvp_entrada_folga',
+        'cvp_saida'=>'cvp_saida',
+        'cvp_saida_ponto_entrada'=>'cvp_saida_ponto_entrada',
+        'cvp_saida_ponto_ligacao'=>'cvp_saida_ponto_ligacao',
+        'cvp_saida_folga'=>'cvp_saida_folga',
+        'tipo_tubo_ponto_entrada'=>'tipo_tubo_ponto_entrada',
+        'tipo_cabo'=>'tipo_cabo',
+        'seccao_cabo'=>'seccao_cabo',
+        'cabo_identificacao'=>'cabo_identificacao',
+        'cabo_designacao_cabos'=>'cabo_designacao_cabos',
+        'cabo_capacidade'=>'cabo_capacidade',
+        'cabo_peso'=>'cabo_peso',
+        'cabo_diametro'=>'cabo_diametro',
+        'cabo_seccao'=>'cabo_seccao',
+        'cvp_identificacao_equipamento'=>'cvp_identificacao_equipamento',
+        'cvp_cabo_ligacao'=>'cvp_cabo_ligacao',
+        'cvp_tipo_equipamento'=>'cvp_tipo_equipamento',
+        'cvp_dimensoes'=>'cvp_dimensoes',
+        'cvp_peso'=>'cvp_peso',
+        'cvp'=>'cvp',
+        'observacoes'=>'observacoes',
+        'metragem'=>'metragem',
+        'quantidade_equipamentos'=>'quantidade_equipamentos',
+        'quantidade_pontos_entrada'=>'quantidade_pontos_entrada',
+        'observacoes_resposta'=>'observacoes_resposta',
+        'resposta'=>'resposta',
+        'data_resposta_licenciamento'=>'2021-02-22',
+        'data_pedido_acesso'=>'2021-02-22',
+        'data_resposta_acesso'=>'2021-02-22',
+        'data_pedido_cadastro'=>'2021-02-22',
+        'data_resposta_cadastro'=>'2021-02-22'
+        ]);*/
+
+    //$user->infraestrutura()->save($infraestrutura);
+
+    //Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
+
+    //return view('infraestruturas/create');
+
+//});
+
+
+Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');

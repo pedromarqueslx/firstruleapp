@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class MunicipiosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return 'okidok';
+        //
     }
 
     /**
@@ -24,10 +24,6 @@ class PostsController extends Controller
     public function create()
     {
         //
-        //return 'createdd';
-        //return view('infraestruturas.create');
-
-
     }
 
     /**
@@ -86,6 +82,3 @@ class PostsController extends Controller
         //
     }
 }
-
-
-

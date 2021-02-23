@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Infraestrutura;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\In;
 
-class Municipios extends Controller
+class InfraestruturasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,11 @@ class Municipios extends Controller
      */
     public function index()
     {
-        //
+
+        $infraestruturas = Infraestrutura::all();
+
+        return view('infraestruturas.index', compact('infraestruturas'));
+
     }
 
     /**
@@ -23,7 +29,9 @@ class Municipios extends Controller
      */
     public function create()
     {
-        //
+
+        return view('infraestruturas.create');
+
     }
 
     /**
@@ -34,7 +42,11 @@ class Municipios extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //return $request->referencia_orait;
+        Infraestrutura::create($request->all());
+
+        return  redirect('/infraestruturas');
     }
 
     /**
@@ -45,7 +57,11 @@ class Municipios extends Controller
      */
     public function show($id)
     {
-        //
+
+        $infraestruturas = Infraestrutura::findOrFail($id);
+
+        return view('infraestruturas.show', compact('infraestruturas'));
+
     }
 
     /**
@@ -57,6 +73,10 @@ class Municipios extends Controller
     public function edit($id)
     {
         //
+        $infraestruturas = Infraestrutura::findOrFail($id);
+
+        return view('infraestruturas.edit', compact('infraestruturas'));
+
     }
 
     /**
@@ -69,6 +89,13 @@ class Municipios extends Controller
     public function update(Request $request, $id)
     {
         //
+        //return $request->all();
+        $infraestruturas = Infraestrutura::findOrFail($id);
+
+        $infraestruturas->update($request->all());
+
+        return redirect('/infraestruturas');
+
     }
 
     /**
@@ -79,6 +106,15 @@ class Municipios extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $infraestruturas = Infraestrutura::findOrFail($id);
+
+        $infraestruturas->delete();
+
+        return redirect('/infraestruturas');
+
     }
 }
+
+
+
