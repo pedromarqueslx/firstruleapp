@@ -1,23 +1,36 @@
 @extends('layouts.app')
-
-
-
 @section('content')
 
-    <form method="post" action="/infraestruturas">
+    <div class="card Recent-Users">
+        <div class="card-header">
+            <h1>Pedido de Disponibilidade</h1>
+        </div>
+        <div class="card-block px-0 py-3">
 
-        <input type="text" name="referencia_orait" placeholder="referencia_orait">
-        <input type="text" name="user_id" value="1">
+            <form method="post" action="/infraestruturas">
 
-        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-        <input type="submit" name="submit">
 
-    </form>
+
+
+
+
+
+
+
+
+
+
+                <input type="text" name="referencia_orait" placeholder="referencia_orait">
+                <input type="text" name="user_id" value="1">
+
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input type="submit" name="submit" value="Submeter Pedido Disponibilidade" class="btn btn-primary">
+
+            </form>
+
+        </div>
+    </div>
 
 @stop
-
-
-
 @section('footer')
-
 @stop
