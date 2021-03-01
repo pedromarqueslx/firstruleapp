@@ -3,7 +3,7 @@
 
     <div class="card Recent-Users">
         <div class="card-header">
-            <h5>Intervenções em Infraestruturas de Telecomunicações</h5>
+            <h1>Intervenções em Infraestruturas de Telecomunicações</h1>
         </div>
         <div class="card-block px-0 py-3">
 

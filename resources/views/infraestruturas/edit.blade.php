@@ -1,27 +1,32 @@
 @extends('layouts.app')
 @section('content')
 
+    <h1>Pedido de Disponibilidade</h1>
+    <p>{{$infraestruturas->referencia_orait}}</p>
 
-    <div class="card Recent-Users">
-        <div class="card-header">
-            <h5>Pedido de Disponibilidade</h5>
-        </div>
-        <div class="card-block px-0 py-3">
+    <div class="card">
+        <div class="card-block px-3 py-4">
 
             <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
 
-            <input type="text" name="referencia_orait" placeholder="referencia_orait" value="{{$infraestruturas->referencia_orait}}">
-            <input type="text" name="user_id" value="{{$infraestruturas->user_id}}">
-
             <div class="row">
                 <div class="col-md-3 mb-3">
+                    <input type="text" class="form-control" name="referencia_orait" placeholder="referencia_orait" value="{{$infraestruturas->referencia_orait}}" readonly>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <input type="text" class="form-control" name="user_id" value="{{$infraestruturas->user_id}}" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3 mb-3 required">
                     <label for="referencia_operador">Referência Operador</label>
                     <input type="text" class="form-control" name="referencia_operador" id="referencia_operador" value="{{$infraestruturas->referencia_operador}}" required="">
                     <div class="invalid-feedback">
                         ...
                     </div>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-3 required">
                     <label for="municipio_id">Município</label>
                     <input class="form-control" name="municipio_id" id="municipio_id" value="{{$infraestruturas->municipio_id}}" required="">
                     <div class="invalid-feedback">
@@ -39,7 +44,7 @@
 
             <h2>Responsável do Operador</h2>
 
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-3 mb-3">
                     <label for="responsavel_operador">Nome do Responsável do Operador</label>
                     <input type="text" class="form-control" name="responsavel_operador" id="responsavel_operador" value="{{$infraestruturas->responsavel_operador}}" required="">
@@ -64,10 +69,14 @@
             </div>
 
             <h3>Documentos em Anexo (PDF e KMZ)</h3>
+            <div class="row mb-5">
+            </div>
 
-            <div class="row">
-                <div class="col-md-1 mb-3">
-                    <label for="cvp_entrada">CVP de entrada</label>
+            <h2>Disponibilidade de Infraestruturas</h2>
+
+            <div class="row mb-5">
+                <div class="col-md-1 mb-3 required">
+                    <label for="cvp_entrada">CVP Entrada</label>
                     <input type="text" class="form-control" name="cvp_entrada" id="cvp_entrada" value="{{$infraestruturas->cvp_entrada}}" required="">
                     <div class="invalid-feedback">
                         ...
@@ -88,14 +97,14 @@
                     </div>
                 </div>
                 <div class="col-md-1 mb-3">
-                    <label for="cvp_entrada_folga">Folga (mts)</label>
-                    <input type="text" class="form-control" name="cvp_entrada_folga" id="cvp_entrada_folga" value="{{$infraestruturas->cvp_entrada_folga}}" required="">
+                    <label for="cvp_entrada_folga">Folga</label>
+                    <input type="text" class="form-control" name="cvp_entrada_folga" id="cvp_entrada_folga" value="{{$infraestruturas->cvp_entrada_folga}}" required="" placeholder="mts">
                     <div class="invalid-feedback">
                         ....
                     </div>
                 </div>
                 <div class="col-md-1 mb-3">
-                    <label for="cvp_saida">CVP de Saída</label>
+                    <label for="cvp_saida">CVP Saída</label>
                     <input type="text" class="form-control" name="cvp_saida" id="cvp_saida" value="{{$infraestruturas->cvp_saida}}" required="">
                     <div class="invalid-feedback">
                         ....
@@ -116,8 +125,8 @@
                     </div>
                 </div>
                 <div class="col-md-1 mb-3">
-                    <label for="cvp_saida_folga">Folga (mts)</label>
-                    <input type="text" class="form-control" name="cvp_saida_folga" id="cvp_saida_folga" value="{{$infraestruturas->cvp_saida_folga}}" required="">
+                    <label for="cvp_saida_folga">Folga</label>
+                    <input type="text" class="form-control" name="cvp_saida_folga" id="cvp_saida_folga" value="{{$infraestruturas->cvp_saida_folga}}" required="" placeholder="(mts)">
                     <div class="invalid-feedback">
                         ....
                     </div>
@@ -137,8 +146,8 @@
                     </div>
                 </div>
                 <div class="col-md-1 mb-3">
-                    <label for="seccao_cabo">Secção Cabo (cm2)</label>
-                    <input type="text" class="form-control" name="seccao_cabo" id="seccao_cabo" value="{{$infraestruturas->seccao_cabo}}" required="">
+                    <label for="seccao_cabo">Secção Cabo</label>
+                    <input type="text" class="form-control" name="seccao_cabo" id="seccao_cabo" value="{{$infraestruturas->seccao_cabo}}" required="" placeholder="(cm2)">
                     <div class="invalid-feedback">
                         ....
                     </div>
@@ -147,7 +156,7 @@
 
             <h2>Tipo de cabo em conduta</h2>
 
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-2 mb-3">
                     <label for="cabo_identificacao">Identificação</label>
                     <input type="text" class="form-control" name="cabo_identificacao" id="cabo_identificacao" value="{{$infraestruturas->cabo_identificacao}}" required="">
@@ -194,7 +203,7 @@
 
             <h2>Tipo de equipamento em CVP</h2>
 
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-2 mb-3">
                     <label for="cvp_identificacao_equipamento">Identificação do Equipamento</label>
                     <input type="text" class="form-control" name="cvp_identificacao_equipamento" id="cvp_identificacao_equipamento" value="{{$infraestruturas->cvp_identificacao_equipamento}}" required="">
@@ -210,8 +219,8 @@
                     </div>
                 </div>
                 <div class="col-md-2 mb-3">
-                    <label for="cvp_tipo_equipamento">Tipo de equipamento (Junta, TAP, PL, Folga)</label>
-                    <input type="text" class="form-control" name="cvp_tipo_equipamento" id="cvp_tipo_equipamento" value="{{$infraestruturas->cvp_tipo_equipamento}}" required="">
+                    <label for="cvp_tipo_equipamento">Tipo de equipamento</label>
+                    <input type="text" class="form-control" name="cvp_tipo_equipamento" id="cvp_tipo_equipamento" value="{{$infraestruturas->cvp_tipo_equipamento}}" required="" placeholder="Junta, TAP, PL, Folga">
                     <div class="invalid-feedback">
                         ....
                     </div>
@@ -239,7 +248,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-md-6 mb-3">
                     <label for="observacoes">Observações</label>
                     <textarea rows="4" cols="50" class="form-control" name="" id="observacoes" required="">{{$infraestruturas->observacoes}}</textarea>
@@ -249,7 +258,7 @@
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="created_at">Data de Pedido de Disponibilidade</label>
-                    <input type="text" class="form-control" name="" id="created_at" value="{{$infraestruturas->created_at}}" required="">
+                    <input type="text" class="form-control" name="" id="created_at" value="{{$infraestruturas->created_at}}" required="" readonly>
                     <div class="invalid-feedback">
                         ....
                     </div>
@@ -258,13 +267,13 @@
 
                 <input name="_method" type="hidden" value="PUT"/>
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                <input type="submit" name="submit" value="update">
+                <input type="submit"  name="submit" value="Submeter Pedido de Disponibilidade" class="btn btn-success mx-auto d-block">
 
             </form>
 
             <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" name="delete" value="delete">
+                <input type="submit" name="delete" value="Apagar pedido" class="btn btn-primary mx-auto d-block">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             </form>
 
