@@ -1,24 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Pedido de Disponibilidade</h1>
-    <p>PD2021</p>
+    <h1>Criar perfil</h1>
+    <p>Os dados registados serão utilizados na simplificação de pedidos de disponibilidade e de acessibilidade às infraestruturas de telecomunicações.</p>
 
     <div class="card">
         <div class="card-block px-3 py-4">
 
-            <form method="post" action="/infraestruturas">
-
-                <div class="row">
-                    <div class="col-md-3 mb-3 required">
-                        <input type="text" name="referencia_orait" class="form-control" placeholder="referencia_orait">
-                        <input type="text" name="user_id" class="form-control" value="1">
-                    </div>
-                </div>
+            <form method="post" action="/users">
 
                 <div class="row mb-3">
                     <div class="col-md-3 mb-3 required">
-                        <label for="referencia_operador">Referência Operador</label>
+                        <label for="referencia_operador">Nome do Operador</label>
                         <input type="text" class="form-control" name="referencia_operador" id="referencia_operador" value="" required="">
                         <div class="invalid-feedback">
                             ...

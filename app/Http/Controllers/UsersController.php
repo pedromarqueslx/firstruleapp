@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Infraestrutura;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\In;
 
-class InfraestruturasController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class InfraestruturasController extends Controller
     public function index()
     {
 
-        $infraestruturas = Infraestrutura::all();
+        $users = User::all();
 
-        return view('infraestruturas.index', compact('infraestruturas'));
+        return view('users.index', compact('users'));
 
     }
 
@@ -30,7 +30,7 @@ class InfraestruturasController extends Controller
     public function create()
     {
 
-        return view('infraestruturas.create');
+        return view('users.create');
 
     }
 
@@ -44,9 +44,9 @@ class InfraestruturasController extends Controller
     {
 
         //return $request->referencia_orait;
-        Infraestrutura::create($request->all());
+        Users::create($request->all());
 
-        return  redirect('/infraestruturas');
+        return  redirect('/users');
 
     }
 
@@ -59,9 +59,9 @@ class InfraestruturasController extends Controller
     public function show($id)
     {
 
-        $infraestruturas = Infraestrutura::findOrFail($id);
+        $users = User::findOrFail($id);
 
-        return view('infraestruturas.show', compact('infraestruturas'));
+        return view('users.show', compact('users'));
 
     }
 
@@ -74,9 +74,9 @@ class InfraestruturasController extends Controller
     public function edit($id)
     {
 
-        $infraestruturas = Infraestrutura::findOrFail($id);
+        $users = User::findOrFail($id);
 
-        return view('infraestruturas.edit', compact('infraestruturas'));
+        return view('users.edit', compact('users'));
 
     }
 
@@ -91,11 +91,11 @@ class InfraestruturasController extends Controller
     {
         //
         //return $request->all();
-        $infraestruturas = Infraestrutura::findOrFail($id);
+        $users = User::findOrFail($id);
 
-        $infraestruturas->update($request->all());
+        $users->update($request->all());
 
-        return redirect('/infraestruturas');
+        return redirect('/users');
 
     }
 
@@ -108,11 +108,11 @@ class InfraestruturasController extends Controller
     public function destroy($id)
     {
 
-        $infraestruturas = Infraestrutura::findOrFail($id);
+        $users = User::findOrFail($id);
 
-        $infraestruturas->delete();
+        $$users->delete();
 
-        return redirect('/infraestruturas');
+        return redirect('/users');
 
     }
 }

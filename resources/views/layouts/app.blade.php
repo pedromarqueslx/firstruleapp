@@ -41,48 +41,48 @@
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/infraestruturas/create" class="">Novo Pedido</a></li>
                         <li class=""><a href="/infraestruturas" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/infraestruturas/create" class="">Novo Pedido Disponibilidade</a></li>
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido</a></li>
-                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/disponibilidades" class="">Consultar Acessos</a></li>
+                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido de Acesso</a></li>
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido</a></li>
-                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/cadastros" class="">Consultar Cadastros</a></li>
+                        <li class=""><a href="/cadastros/edit" class="">...</a></li>
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido</a></li>
-                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/users" class="">Consultar Operadores</a></li>
+                        <li class=""><a href="/users/create" class="">Novo Operador</a></li>
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Municípios</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido</a></li>
-                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/municipios" class="">Consultar Municípios</a></li>
+                        <li class=""><a href="/municipios/create" class="">Novo Municípios</a></li>
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licenciamentos</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido</a></li>
-                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/licenciamento" class="">Consultar Licenciamento</a></li>
+                        <li class=""><a href="/licenciamento/create" class="">Novo Licenciamento</a></li>
                     </ul>
                 </li>
 

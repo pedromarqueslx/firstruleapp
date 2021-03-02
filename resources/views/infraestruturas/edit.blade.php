@@ -251,14 +251,14 @@
             <div class="row mb-5">
                 <div class="col-md-6 mb-3">
                     <label for="observacoes">Observações</label>
-                    <textarea rows="4" cols="50" class="form-control" name="" id="observacoes" required="">{{$infraestruturas->observacoes}}</textarea>
+                    <textarea rows="4" cols="50" class="form-control" name="observacoes" id="observacoes" required="">{{$infraestruturas->observacoes}}</textarea>
                     <div class="invalid-feedback">
                         ....
                     </div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="created_at">Data de Pedido de Disponibilidade</label>
-                    <input type="text" class="form-control" name="" id="created_at" value="{{$infraestruturas->created_at}}" required="" readonly>
+                    <input type="text" class="form-control" name="created_at" id="created_at" value="{{$infraestruturas->created_at}}" required="" readonly>
                     <div class="invalid-feedback">
                         ....
                     </div>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Municipio;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\In;
+
 
 class MunicipiosController extends Controller
 {
@@ -13,7 +16,9 @@ class MunicipiosController extends Controller
      */
     public function index()
     {
-        //
+        $municipios = Municipio::all();
+
+        return view('municipios.index', compact('municipios'));
     }
 
     /**
@@ -23,7 +28,9 @@ class MunicipiosController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('municipios.create');
+
     }
 
     /**
@@ -34,7 +41,11 @@ class MunicipiosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Municipio::create($request->all());
+
+        return  redirect('/municipios');
+
     }
 
     /**
@@ -45,7 +56,11 @@ class MunicipiosController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $municipios = Municipio::findOrFail($id);
+
+        return view('municipios.show', compact('municipios'));
+
     }
 
     /**
@@ -56,7 +71,11 @@ class MunicipiosController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $municipios = Municipio::findOrFail($id);
+
+        return view('municipios.edit', compact('municipios'));
+
     }
 
     /**
@@ -68,7 +87,13 @@ class MunicipiosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $municipios = Municipio::findOrFail($id);
+
+        $municipios->update($request->all());
+
+        return redirect('/municipios');
+
     }
 
     /**
@@ -79,6 +104,12 @@ class MunicipiosController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $municipios = Municipio::findOrFail($id);
+
+        $municipios->delete();
+
+        return redirect('/municipios');
+
     }
 }

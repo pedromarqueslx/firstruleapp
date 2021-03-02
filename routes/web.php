@@ -21,9 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('/disponibilidades', function () {
     return view('disponibilidades');
 });
+*/
 
 //Route::get('/disponibilidades/{id}', 'App\Http\Controllers\Disponibilidades@index');
 
@@ -31,6 +33,7 @@ Route::get('/disponibilidades', function () {
 //    return view('disponibilidades');
 //});
 
+/*
 Route::get('/acessos', function () {
     return view('acessos');
 });
@@ -58,8 +61,9 @@ Route::get('/contato', function () {
 Route::get('/licenciamentos', function () {
     return view('licenciamentos');
 });
+*/
 
-Route::resource('contato', 'App\Http\Controllers\Contato');
+//Route::resource('contato', 'App\Http\Controllers\Contato');
 
 //Route::resource('disponibilidades/{id}/{name}', 'App\Http\Controllers\Disponibilidades');
 
@@ -129,8 +133,7 @@ Route::get('/basicinsert', function (){
 
 
 
-
-
+/*
 Route::get('/municipios/create', function (){
 
     $user = User::findOrFail(1);
@@ -144,6 +147,7 @@ Route::get('/municipios/create', function (){
     $user->municipio()->save($municipio);
 
 });
+*/
 
 
 Route::get('/municipios/update', function (){
@@ -421,3 +425,8 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
 
 
 Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
+
+Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
+
+Route::resource('/users','App\Http\Controllers\UsersController');
+
