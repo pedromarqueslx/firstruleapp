@@ -43,8 +43,17 @@ class UsersController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request,[
+            'name'=>'required|max:50',
+            'email'=>'required',
+            'password'=>'required|max:50',
+            'morada'=>'required',
+            'contribuinte'=>'required',
+            'telefone'=>'required'
+        ]);
+
         //return $request->referencia_orait;
-        Users::create($request->all());
+        User::create($request->all());
 
         return  redirect('/users');
 
@@ -110,12 +119,9 @@ class UsersController extends Controller
 
         $users = User::findOrFail($id);
 
-        $$users->delete();
+        $users->delete();
 
         return redirect('/users');
 
     }
 }
-
-
-

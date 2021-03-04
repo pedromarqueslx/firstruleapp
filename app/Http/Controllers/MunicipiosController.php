@@ -42,6 +42,14 @@ class MunicipiosController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request,[
+            'nome'=>'required|max:50',
+            'email'=>'required',
+            'contribuinte'=>'required|max:50',
+            'telefone'=>'required',
+            'morada'=>'required'
+        ]);
+
         Municipio::create($request->all());
 
         return  redirect('/municipios');

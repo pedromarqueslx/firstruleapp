@@ -423,10 +423,12 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
 
 //});
 
+Route::group(['middleware'=>'web'], function(){
 
-Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
+    Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
 
-Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
+    Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
 
-Route::resource('/users','App\Http\Controllers\UsersController');
+    Route::resource('/users','App\Http\Controllers\UsersController');
 
+});

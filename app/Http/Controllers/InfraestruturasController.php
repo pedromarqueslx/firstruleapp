@@ -43,11 +43,16 @@ class InfraestruturasController extends Controller
     public function store(Request $request)
     {
 
-        //return $request->referencia_orait;
+        $this->validate($request,[
+            'referencia_operador'=>'required|max:50',
+            'municipio_id'       =>'required|max:50',
+            'municipio_cartas'   =>'required|max:50',
+            'cvp_entrada'        =>'required|max:50'
+        ]);
+
         Infraestrutura::create($request->all());
 
         return  redirect('/infraestruturas');
-
     }
 
     /**
@@ -73,6 +78,12 @@ class InfraestruturasController extends Controller
      */
     public function edit($id)
     {
+        /*$this->validate($request,[
+            'referencia_operador'=>'required|max:50',
+            'municipio_id'=>'required',
+            'municipio_cartas'=>'required|max:50',
+            'cvp_entrada'=>'required'
+        ]);*/
 
         $infraestruturas = Infraestrutura::findOrFail($id);
 
