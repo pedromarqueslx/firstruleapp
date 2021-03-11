@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 @section('content')
 
     <h1>Dados de Município</h1>

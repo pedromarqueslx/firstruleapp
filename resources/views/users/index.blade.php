@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 @section('content')
+
 
     <div class="card Recent-Users">
         <div class="card-header">
@@ -18,6 +19,6 @@
         </div>
     </div>
 
-@stop
+@endsection
 @section('footer')
 @stop

@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FirstRule</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-
-    </style>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -23,7 +21,7 @@
 <nav class="pcoded-navbar">
     <div class="navbar-wrapper">
         <div class="navbar-brand header-logo">
-            <a href="/" class="b-brand">
+            <a href="{{ url('/home') }}" class="b-brand">
                 <div class="b-bg">
                     <img src="{{url('/favicon.svg')}}" alt="FirstRule" class=""/>
                 </div>
@@ -35,7 +33,7 @@
             <ul class="nav pcoded-inner-navbar">
 
                 <li data-username="" class="nav-item">
-                    <a href="/" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
+                    <a href="{{ url('/home') }}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
@@ -111,17 +109,28 @@
         <ul class="navbar-nav ml-auto">
             <li>
                 <div class="dropdown drp-user">
+
                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="small">{{ Auth::user()->name }}</span>
                         <i class="icon feather icon-settings"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <span>John Doe</span>
+                            <span>{{ Auth::user()->name }}</span>
                             <a href="#" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>
                         </div>
                         <ul class="pro-body">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             <li><a href="javascript:" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
                             <li><a href="javascript:" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
                         </ul>

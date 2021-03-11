@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 @section('content')
 
     <h1>Criar perfil</h1>
