@@ -15,7 +15,7 @@ class CreateInfraestruturasTable extends Migration
     {
         Schema::create('infraestruturas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->nullable($value = true);
             $table->string('referencia_orait')->nullable($value = true);
             $table->string('nome_operador')->nullable($value = true);
             $table->string('contribuinte_operador')->nullable($value = true);
