@@ -5,6 +5,7 @@ use App\Models\Infraestrutura;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -366,3 +367,20 @@ Route::get('/admin/user/roles', ['middleware'=> ['web'], function(){
 }]);
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+
+
+
+Route::get('/mail', function(){
+
+    $data = [
+        'title'     => 'okiodki',
+        'content'   => 'oookiiokiidddoookkii',
+    ];
+
+    Mail::send('emails.mail', $data, function($message){
+
+        $message->to('pedromarqueslx@gmail.com', 'Pedro')->subject('hello how are you');
+
+    });
+
+});
