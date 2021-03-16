@@ -366,8 +366,6 @@ Route::get('/admin/user/roles', ['middleware'=> ['web'], function(){
 
 }]);
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-
 
 
 Route::get('/mail', function(){
@@ -383,4 +381,11 @@ Route::get('/mail', function(){
 
     });
 
+});
+
+
+
+//Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+Route::get('/admin', function(){
+    return view('admin.index');
 });

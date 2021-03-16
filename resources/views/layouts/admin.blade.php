@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FirstRule</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="{{asset('/favicon.svg')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
 </head>
 
 <body>
@@ -17,78 +17,8 @@
     </div>
 </div>
 <!-- [ Pre-loader ] End -->
-<!-- [ navigation menu ] start -->
-<nav class="pcoded-navbar">
-    <div class="navbar-wrapper">
-        <div class="navbar-brand header-logo">
-            <a href="{{ url('/home') }}" class="b-brand">
-                <div class="b-bg">
-                    <img src="{{url('/favicon.svg')}}" alt="FirstRule" class=""/>
-                </div>
-                <span class="b-title">FirstRule</span>
-            </a>
-            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
-        </div>
-        <div class="navbar-content scroll-div">
-            <ul class="nav pcoded-inner-navbar">
 
-                <li data-username="" class="nav-item">
-                    <a href="{{ url('/home') }}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/infraestruturas" class="">Consultar Pedidos</a></li>
-                        <li class=""><a href="/infraestruturas/create" class="">Novo Pedido Disponibilidade</a></li>
-                    </ul>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/acessos')) active @endif ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/disponibilidades" class="">Consultar Acessos</a></li>
-                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido de Acesso</a></li>
-                    </ul>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/cadastros')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/cadastros" class="">Consultar Cadastros</a></li>
-                        <li class=""><a href="/cadastros/edit" class="">...</a></li>
-                    </ul>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/users" class="">Consultar Operadores</a></li>
-                        <li class=""><a href="/users/create" class="">Novo Operador</a></li>
-                    </ul>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/municipios')) active @endif">
-                    <a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Municípios</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/municipios" class="">Consultar Municípios</a></li>
-                        <li class=""><a href="/municipios/create" class="">Novo Municípios</a></li>
-                    </ul>
-                </li>
-
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/licenciamentos')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licenciamentos</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="/licenciamento" class="">Consultar Licenciamento</a></li>
-                        <li class=""><a href="/licenciamento/create" class="">Novo Licenciamento</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- [ navigation menu ] end -->
+    @include('admin.partials._navbar')
 
 <!-- [ Header ] start -->
 <header class="navbar pcoded-header navbar-expand-lg navbar-light">
@@ -111,12 +41,12 @@
                 <div class="dropdown drp-user">
 
                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="small">{{ Auth::user()->name }}</span>
+                        <span class="small">{{--{{ Auth::user()->name }}--}}</span>
                         <i class="icon feather icon-settings"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <span>{{ Auth::user()->name }}</span>
+                            <span>{{--{{ Auth::user()->name }}--}}</span>
                             <a href="#" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>
@@ -230,6 +160,6 @@
 </html>
 
 <!-- Required Js -->
-<script src="/assets/js/vendor-all.min.js"></script>
-<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="/assets/js/pcoded.min.js"></script>
+<script src="{{asset('/assets/js/vendor-all.min.js')}}"></script>
+<script src="{{asset('/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/assets/js/pcoded.min.js')}}"></script>
