@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FirstRule</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="{{asset('/favicon.svg')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
 </head>
 
 <body>
@@ -230,6 +230,6 @@
 </html>
 
 <!-- Required Js -->
-<script src="/assets/js/vendor-all.min.js"></script>
-<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="/assets/js/pcoded.min.js"></script>
+<script src="{{asset('/assets/js/vendor-all.min.js')}}"></script>
+<script src="{{asset('/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/assets/js/pcoded.min.js')}}"></script>
