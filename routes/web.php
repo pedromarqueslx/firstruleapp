@@ -318,12 +318,16 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
 //});
 
 Route::group(['middleware'=>'web'], function(){
+
     Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
     Route::resource('/disponibilidades','App\Http\Controllers\InfraestruturasController');
     Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
     Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
-    Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
     Route::resource('/users','App\Http\Controllers\UsersController');
+    Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
+    // use infraestruturas table ???
+    Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
+
 });
 
 
@@ -340,6 +344,12 @@ Route::get('/admin/user/roles', ['middleware'=> ['web'], function(){
 
 
 
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
+/*Route::get('/admin', function(){
+    return view('admin.index');
+});*/
+
+
 Route::get('/mail', function(){
 
     $data = [
@@ -353,11 +363,4 @@ Route::get('/mail', function(){
 
     });
 
-});
-
-
-
-//Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-Route::get('/admin', function(){
-    return view('admin.index');
 });

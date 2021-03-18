@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@extends('layouts.menu')
 @section('content')
 
     <h1>{{ __('auth.Register Title') }}</h1>

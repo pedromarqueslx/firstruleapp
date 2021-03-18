@@ -69,7 +69,7 @@
         <ul class="iew-download">
             <li>
                 <a href="http://www.google.com/chrome/">
-                    <img src="{{asset('assets/images/browser/chrome.png')}}" alt="Chrome">
+                    <img src="{{asset('/assets/images/browser/chrome.png')}}" alt="Chrome">
                     <div>Chrome</div>
                 </a>
             </li>

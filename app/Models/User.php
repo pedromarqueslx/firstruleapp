@@ -26,7 +26,7 @@ class User extends Authenticatable
         'telefone',
         'nome_responsavel_operador',
         'email_responsavel_operador',
-        'telefone_responsavel_operador'
+        'telefone_responsavel_operador',
     ];
 
     /**
@@ -91,5 +91,6 @@ class User extends Authenticatable
         }
             return false;
     }
+
 
 }

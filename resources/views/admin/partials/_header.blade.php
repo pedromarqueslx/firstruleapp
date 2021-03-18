@@ -1,13 +1,17 @@
 <header class="navbar pcoded-header navbar-expand-lg navbar-light">
     <div class="m-header">
+        @if(Auth::check())
         <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
-        <a href="index.html" class="b-brand">
+        @endif
+        <a href="{{ url('/home') }}" class="b-brand">
             <div class="b-bg">
-                <img src="{{url('/favicon.svg')}}" alt="FirstRule" class=""/>
+                <img src="{{url('/favicon.svg')}}" alt="FirstRule"/>
             </div>
             <span class="b-title">FirstRule</span>
         </a>
     </div>
+
+    @if(Auth::check())
     <a class="mobile-menu" id="mobile-header" href="javascript:">
         <i class="feather icon-more-horizontal"></i>
     </a>
@@ -46,4 +50,8 @@
             </li>
         </ul>
     </div>
+    @endif
+
 </header>
+
+
