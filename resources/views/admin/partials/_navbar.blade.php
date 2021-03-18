@@ -20,8 +20,8 @@
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="/infraestruturas" class="">Consultar Pedidos</a></li>
-                        <li class=""><a href="/infraestruturas/create" class="">Novo Pedido Disponibilidade</a></li>
+                        <li class=""><a href="/disponibilidades" class="">Consultar Pedidos</a></li>
+                        <li class=""><a href="/disponibilidades/create" class="">Novo Pedido Disponibilidade</a></li>
                     </ul>
                 </li>
 

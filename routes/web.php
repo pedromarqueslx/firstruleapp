@@ -28,7 +28,6 @@ Route::get('/', function () {
 
 //Eloquent ORM
 /*Route::get('/read', function (){
-
     $infraestruturas = Infraestrutura::all();
     foreach ($infraestruturas as $infraestrutura) {
         return $infraestrutura->referencia_orait;
@@ -37,22 +36,18 @@ Route::get('/', function () {
 
 
 /*Route::get('/find', function (){
-
     $infraestruturas = Infraestrutura::find(3);
     return $infraestruturas->referencia_orait;
 });*/
 
 
 /*Route::get('/findwhere', function (){
-
     $infraestruturas = Infraestrutura::where('id', 4)->orderBy('id', 'desc')->take(1)->get();
     return $infraestruturas;
-
 });*/
 
 
 /*Route::get('/findmore', function (){
-
     //$infraestruturas = Infraestrutura::findOrFail('id', 4)->orderBy('id', 'desc')->take(1)->get();
     //$infraestruturas = Infraestrutura::where('user_count', '<', 50)->findOrFail();
     //return $infraestruturas;
@@ -91,13 +86,9 @@ Route::get('/municipios/create', function (){
 
 
 Route::get('/municipios/update', function (){
-
     $municipio = Municipio::whereUserId(1)->first();
-
     $municipio->nome = 'oeiras';
-
     $municipio->save();
-
 });
 
 
@@ -111,7 +102,6 @@ Route::get('/update', function (){
 Route::get('/delete', function (){
 
     $infraestrutura = Infraestrutura::find(7);
-
     $infraestrutura->delete();
 
 });
@@ -242,9 +232,7 @@ Route::get('/user/{id}/role', function($id){
 Route::get('user/pivot', function(){
 
     $user = User::find(1);
-
     foreach ($user->roles as $role){
-
         echo $role->pivot->created_at;
 
     }
@@ -258,24 +246,14 @@ Route::get('user/pivot', function(){
  *
  *
  *
-
 Route::get('/infraestruturas/{id}/municipio', function($id){
-
     //$municipio = Municipio::find($id)->infraestruturas()->orderBy('id','desc')->get();
-
     $municipio = Municipio::find($id);
-
     //return $municipio;
-
     foreach ($municipio->infraestruturas as $infraestrutura){
-
         return $infraestrutura->id;
-
     }
-
-
 });
-
 */
 
 
@@ -284,9 +262,7 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
 // FirstRule Application
 
 //Route::get('/infraestruturas/create', function (){
-
     //$user = User::findOrFail(1);
-
     /*$infraestrutura = new Infraestrutura([
         'referencia_orait'=>'reforait',
         'nome_operador'=>'operator',
@@ -337,21 +313,17 @@ Route::get('/infraestruturas/{id}/municipio', function($id){
         ]);*/
 
     //$user->infraestrutura()->save($infraestrutura);
-
     //Infraestrutura::create(['referencia_orait'=>'laravel', 'nome_operador'=>'okidoki']);
-
     //return view('infraestruturas/create');
-
 //});
 
 Route::group(['middleware'=>'web'], function(){
-
     Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
-
+    Route::resource('/disponibilidades','App\Http\Controllers\InfraestruturasController');
+    Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
+    Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
     Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
-
     Route::resource('/users','App\Http\Controllers\UsersController');
-
 });
 
 
