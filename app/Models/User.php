@@ -62,6 +62,7 @@ class User extends Authenticatable
 
     }
 
+    // User has many infraestruturas
     public function infraestruturas(){
 
         return $this->hasMany('App\Models\Infraestrutura');
