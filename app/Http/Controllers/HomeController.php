@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Infraestrutura;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,11 +32,11 @@ class HomeController extends Controller
         //$request->session()->forget('Pedro Marques');
         //$request->session()->flush();
         //return $request->session()->all();
-
         //$request->session()->flash('message','Okidoki');
         //return $request->session()->get('message');
 
-        return view('home');
+        $infraestruturas = Infraestrutura::all();
+        return view('home', ['infraestruturas' => $infraestruturas]);
 
     }
 }
