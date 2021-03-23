@@ -50,19 +50,39 @@ class InfraestruturasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    //public function store(Request $request)
+    public function store()
     {
-
-        $this->validate($request,[
-            'referencia_operador'=>'required|max:50',
-            'municipio_id'       =>'required|max:50',
-            'municipio_cartas'   =>'required|max:50',
+        //dd(request()->all());
+        $inputs = request()->validate([
+            'referencia_operador'=>'required|max:40',
+            'municipio_id'       =>'required|max:40',
+            'municipio_cartas'   =>'required|max:20',
+            'anexo'              =>'mimes:pdf,png,jpeg',
+            //'anexo'              =>'file',
             'cvp_entrada'        =>'required|max:50'
         ]);
 
-        Infraestrutura::create($request->all());
+        // check if anexo exists
+        /*
+        if($file = request('anexo')){
+            $name = $file->getClientOriginalName();
+            $file->move('images', $name);
+            //$inputs['anexo'] = request('anexo')->store('images');
+            $inputs['anexo'] = $name;
+        }
+        */
 
-        return  redirect('/infraestruturas');
+        if(request('anexo')){
+            $inputs['anexo'] = request('anexo')->store('images');
+        }
+
+        auth()->user()->infraestruturas()->create($inputs);
+        return back();
+
+        //Infraestrutura::create($inputs->all());
+        //return  redirect('/infraestruturas');
+        //dd($request->anexo);
     }
 
     /**

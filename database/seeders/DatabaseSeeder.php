@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         //\App\Models\Role::factory(2)->create();
         //\App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory(10)->create()->each(function($user){
+/*        \App\Models\User::factory(10)->create()->each(function($user){
                 $user->infraestruturas()->save(\App\Models\Infraestrutura::factory()->make());
-        });
+        });*/
 
     }
 }

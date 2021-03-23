@@ -2,7 +2,7 @@
 @section('content')
 
     <h1>Pedido de Disponibilidade</h1>
-    <p>PD2021</p>
+    <p class="small">PD{{ now()->year }}XXX0000</p>
     <!-- Report errors -->
     @if(count($errors) > 0)
     @foreach($errors->all() as $error)
@@ -12,14 +12,13 @@
 
     <div class="card">
         <div class="card-block px-3 py-4">
-
-
-        <form method="post" action="/infraestruturas">
+        <!--action="/infraestruturas"-->
+        <form method="post" action="{{route('infraestruturas.store')}}" enctype="multipart/form-data">
 
             <div class="row">
                 <div class="col-md-3 mb-3 required">
-                    <input type="text" name="referencia_orait" class="form-control" value="PD2021" placeholder="referencia_orait">
-                    <input type="text" name="user_id" class="form-control" value="1">
+                    <input type="text" name="referencia_orait" class="form-control" value="PD{{ now()->year }}XXX0000" placeholder="referencia_orait">
+                    {{--<input type="text" name="user_id" class="form-control" value="1">--}}
                 </div>
             </div>
 
@@ -34,7 +33,7 @@
                 <div class="col-md-3 mb-3 required">
                     <label for="municipio_id">Município</label>
                     <select class="form-control" name="municipio_id" id="municipio_id" required="">
-                        <option disabled selected value> -- selecione município -- </option>
+                        <option disabled selected value>Selecione Município</option>
                         <option>Oeiras</option>
                         <option>Cascais</option>
                         <option>Lisboa</option>
@@ -73,6 +72,8 @@
 
             <h3>Documentos em Anexo (PDF e KMZ)</h3>
             <div class="row mb-5">
+                <label for="file"></label>
+                <input type="file" class="form-control-file" name="anexo" id="anexo">
             </div>
 
             <h2>Disponibilidade de Infraestruturas</h2>

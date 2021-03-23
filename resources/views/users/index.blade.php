@@ -1,11 +1,9 @@
 @extends('layouts.menu')
 @section('content')
 
+    <h1>Operadores</h1>
 
     <div class="card Recent-Users">
-        <div class="card-header">
-            <h1>Intervenções em Infraestruturas de Telecomunicações</h1>
-        </div>
         <div class="card-block px-0 py-3">
 
             <ul>

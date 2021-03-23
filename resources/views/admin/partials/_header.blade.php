@@ -22,12 +22,12 @@
                 <div class="dropdown drp-user">
 
                     <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="small">{{--{{ Auth::user()->name }}--}}</span>
+                        <span class="small">{{ Auth::user()->name }}</span>
                         <i class="icon feather icon-settings"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <span>{{--{{ Auth::user()->name }}--}}</span>
+                            <span>{{ Auth::user()->name }}</span>
                             <a href="#" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>

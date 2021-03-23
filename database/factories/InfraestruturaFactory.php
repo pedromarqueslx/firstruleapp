@@ -35,6 +35,7 @@ class InfraestruturaFactory extends Factory
             'email_responsavel_operador' => $this->faker->companyEmail,
             'municipio_id' => $this->faker->randomDigit,
             'municipio_cartas' => $this->faker->randomDigit,
+            'anexo'=> $this->faker->imageUrl($width = 640, $height = 480),
             'cvp_entrada' => $this->faker->randomDigit,
             'cvp_entrada_ponto_entrada' => $this->faker->randomDigit,
             'cvp_entrada_ponto_ligacao' => $this->faker->randomDigit,

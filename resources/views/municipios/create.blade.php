@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Dados de Município</h1>
+    <h1>Criar Município</h1>
 
     <div class="card">
         <div class="card-block px-3 py-4">

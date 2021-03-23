@@ -29,6 +29,7 @@ class Infraestrutura extends Model
         'email_responsavel_operador',
         'municipio_id',
         'municipio_cartas',
+        'anexo',
         'cvp_entrada',
         'cvp_entrada_ponto_entrada',
         'cvp_entrada_ponto_ligacao',
@@ -67,8 +68,8 @@ class Infraestrutura extends Model
 
     public function user(){
 
-        return $this->belongsTo('App\Models\User');
-        //return $this->belongsTo(User::class);
+        //return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
 
     }
 

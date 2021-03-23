@@ -39,4 +39,10 @@ class HomeController extends Controller
         return view('home', ['infraestruturas' => $infraestruturas]);
 
     }
+
+    public function show(Infraestrutura $infraestrutura){
+
+        return view('infraestruturas', ['infraestrutura' => $infraestrutura]);
+
+    }
 }

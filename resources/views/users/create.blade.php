@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Criar perfil</h1>
+    <h1>Criar Perfil de Operador</h1>
     <p class="small">Os dados registados serão utilizados na simplificação de pedidos de disponibilidade e de acessibilidade às infraestruturas de telecomunicações.</p>
 
     <div class="card">
