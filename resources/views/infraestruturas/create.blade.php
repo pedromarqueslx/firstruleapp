@@ -17,8 +17,12 @@
 
             <div class="row">
                 <div class="col-md-3 mb-3 required">
-                    <input type="text" name="referencia_orait" class="form-control" value="PD{{ now()->year }}XXX0000" placeholder="referencia_orait">
-                    {{--<input type="text" name="user_id" class="form-control" value="1">--}}
+                    <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX0000" placeholder="">
+                    <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_contribuinte" id="user_contribuinte" value="{{auth()->user()->contribuinte}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_morada" id="user_morada" value="{{auth()->user()->morada}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_telefone" id="user_telefone" value="{{auth()->user()->telefone}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_email" id="user_email" value="{{auth()->user()->email}}" placeholder="">
                 </div>
             </div>
 
@@ -211,7 +215,7 @@
                 </div>
 
                 <div class="col-md-2 mb-3">
-                    <label for="created_at">Data de Pedido de Disponibilidade</label>
+                    <label for="created_at">Data de Pedido</label>
                     <input type="text" class="form-control" name="created_at" id="created_at" required="" placeholder="{{ date('Y-m-d') }}" readonly>
                 </div>
             </div>

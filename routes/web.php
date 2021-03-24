@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
     Route::get('/infraestruturas/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
     Route::post('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@store')->name('infraestruturas.store');
+    Route::get('/infraestruturas/edit', 'App\Http\Controllers\InfraestruturasController@edit')->name('infraestruturas.edit');
+    Route::patch('/infraestruturas/update', 'App\Http\Controllers\InfraestruturasController@update')->name('infraestruturas.update');
 
 
     Route::resource('/disponibilidades','App\Http\Controllers\InfraestruturasController');

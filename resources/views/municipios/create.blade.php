@@ -1,18 +1,19 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Criar Município</h1>
+    <h1>Novo Município</h1>
+
 
     <div class="card">
         <div class="card-block px-3 py-4">
 
             <form method="post" action="/municipios">
 
-                <div class="row">
+{{--                <div class="row">
                     <div class="col-md-3 mb-3 required">
                         <input type="text" name="user_id" class="form-control" value="1">
                     </div>
-                </div>
+                </div>--}}
 
                 <div class="row mb-3">
                     <div class="col-md-2 mb-3 required">
@@ -70,7 +71,7 @@
                     </div>
                     <div class="col-md-2 mb-3">
                         <label for="created_at">Data</label>
-                        <input type="text" class="form-control" name="created_at" id="created_at" value="" required="" readonly>
+                        <input type="text" class="form-control" name="created_at" id="created_at" required="" placeholder="{{ date('Y-m-d') }}" readonly>
                     </div>
                 </div>
 

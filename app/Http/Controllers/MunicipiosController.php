@@ -62,6 +62,8 @@ class MunicipiosController extends Controller
 
         Municipio::create($request->all());
 
+        session()->flash('message', 'Município criado com sucesso');
+
         return  redirect('/municipios');
 
     }

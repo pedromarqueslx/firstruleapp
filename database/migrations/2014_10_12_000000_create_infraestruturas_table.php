@@ -18,10 +18,11 @@ class CreateInfraestruturasTable extends Migration
             $table->integer('user_id')->nullable($value = true);
             //$table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('referencia_orait')->nullable($value = true);
-            $table->string('nome_operador')->nullable($value = true);
-            $table->string('contribuinte_operador')->nullable($value = true);
-            $table->string('morada_operador')->nullable($value = true);
-            $table->string('telefone_operador')->nullable($value = true);
+            $table->string('user_name')->nullable($value = true);
+            $table->string('user_contribuinte')->nullable($value = true);
+            $table->string('user_morada')->nullable($value = true);
+            $table->string('user_telefone')->nullable($value = true);
+            $table->string('user_email')->nullable($value = true);
             $table->string('email_operador')->nullable($value = true);
             $table->string('referencia_operador')->nullable($value = true);
             $table->string('responsavel_operador')->nullable($value = true);

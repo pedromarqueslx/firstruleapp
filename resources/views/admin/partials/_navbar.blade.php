@@ -23,48 +23,52 @@
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
+                        <li class=""><a href="{{ route('infraestruturas.create')}}" class="">Novo Pedido</a></li>
                         <li class=""><a href="{{ route('infraestruturas.index')}}" class="">Consultar Pedidos</a></li>
-                        <li class=""><a href="{{ route('infraestruturas.create')}}" class="">Novo Pedido Disponibilidade</a></li>
+
                     </ul>
                 </li>
 
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/acessos')) active @endif ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
-                    <ul class="pcoded-submenu">
+                <li data-username="" class="nav-item @if(str_contains(url()->current(), '/acessos')) active @endif ">
+                    <a href="{{ url('/acessos')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
+{{--                    <ul class="pcoded-submenu">
+                        <li class=""><a href="{{ url('/acessos/create')}}" class="">Novo Pedido</a></li>
                         <li class=""><a href="{{ url('/acessos')}}" class="">Consultar Acessos</a></li>
-                        <li class=""><a href="{{ url('/acessos/create')}}" class="">Novo Pedido de Acesso</a></li>
-                    </ul>
+                    </ul>--}}
                 </li>
 
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/cadastros')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
-                    <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/cadastros')}}" class="">Consultar Cadastros</a></li>
+                <li data-username="" class="nav-item @if(str_contains(url()->current(), '/cadastros')) active @endif">
+                    <a href="{{ url('/cadastros')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
+{{--                    <ul class="pcoded-submenu">
                         <li class=""><a href="{{ url('/cadastros/create')}}" class="">Novo Cadastro</a></li>
-                    </ul>
+                        <li class=""><a href="{{ url('/cadastros')}}" class="">Consultar Cadastros</a></li>
+                    </ul>--}}
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/users')}}" class="">Consultar Operadores</a></li>
                         <li class=""><a href="{{ url('/users/create')}}" class="">Novo Operador</a></li>
+                        <li class=""><a href="{{ url('/users')}}" class="">Consultar Operadores</a></li>
+
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/municipios')) active @endif">
                     <a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Municípios</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/municipios')}}" class="">Consultar Municípios</a></li>
                         <li class=""><a href="{{ url('/municipios/create')}}" class="">Novo Município</a></li>
+                        <li class=""><a href="{{ url('/municipios')}}" class="">Consultar Municípios</a></li>
+
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/licenciamentos')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licenciamentos</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/licenciamentos')}}" class="">Consultar Licenciamentos</a></li>
                         <li class=""><a href="{{ url('/licenciamentos/create')}}" class="">Novo Licenciamento</a></li>
+                        <li class=""><a href="{{ url('/licenciamentos')}}" class="">Consultar Licenciamentos</a></li>
+
                     </ul>
                 </li>
 

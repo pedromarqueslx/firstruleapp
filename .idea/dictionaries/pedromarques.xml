@@ -2,15 +2,27 @@
   <dictionary name="pedromarques">
     <words>
       <w>acessos</w>
+      <w>anexo</w>
       <w>cadastros</w>
+      <w>cartas</w>
+      <w>contribuinte</w>
       <w>disponibilidades</w>
+      <w>entrada</w>
+      <w>folga</w>
       <w>infraestrutura</w>
       <w>infraestruturas</w>
       <w>licenciamento</w>
       <w>licenciamentos</w>
+      <w>ligacao</w>
       <w>morada</w>
       <w>municipio</w>
       <w>municipios</w>
+      <w>operador</w>
+      <w>orait</w>
+      <w>ponto</w>
+      <w>referencia</w>
+      <w>responsavel</w>
+      <w>telefone</w>
     </words>
   </dictionary>
 </component>

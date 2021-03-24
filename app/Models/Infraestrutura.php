@@ -18,11 +18,13 @@ class Infraestrutura extends Model
     protected $fillable = [
         'user_id',
         'referencia_orait',
-        'nome_operador',
-        'contribuinte_operador',
-        'morada_operador',
-        'telefone_operador',
-        'email_operador',
+
+        'user_name',
+        'user_contribuinte',
+        'user_morada',
+        'user_telefone',
+        'user_email',
+
         'referencia_operador',
         'responsavel_operador',
         'telefone_responsavel_operador',

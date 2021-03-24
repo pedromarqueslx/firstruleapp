@@ -6,9 +6,9 @@
 
     <div class="card">
         <div class="card-block px-3 py-4">
-
-            <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
-
+            {{--infraestruturas/{{$infraestruturas->id}}--}}
+            <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}">
+            @method('PATCH')
             <div class="row">
                 <div class="col-md-3 mb-3">
                     <input type="text" class="form-control" name="referencia_orait" placeholder="referencia_orait" value="{{$infraestruturas->referencia_orait}}" readonly>
@@ -69,7 +69,11 @@
             </div>
 
             <h3>Documentos em Anexo (PDF e KMZ)</h3>
+                <div>{{$infraestruturas->anexo}}</div>
+                <div><img src="{{$infraestruturas->anexo}}"></div>
             <div class="row mb-5">
+                <label for="file"></label>
+                <input type="file" class="form-control-file" name="anexo" id="anexo">
             </div>
 
             <h2>Disponibilidade de Infraestruturas</h2>
