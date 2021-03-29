@@ -20,12 +20,11 @@
                     <a href="{{ url('/home') }}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
                 </li>
 
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif">
+                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ route('infraestruturas.create')}}" class="">Novo Pedido</a></li>
-                        <li class=""><a href="{{ route('infraestruturas.index')}}" class="">Consultar Pedidos</a></li>
-
+                        <li class=""><a href="{{route('infraestruturas.create')}}" class="">Novo Pedido</a></li>
+                        <li class=""><a href="{{route('infraestruturas.index')}}" class="">Consultar Pedidos</a></li>
                     </ul>
                 </li>
 
@@ -55,16 +54,16 @@
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/municipios')) active @endif">
-                    <a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Municípios</span></a>
+                    <a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Concessões</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/municipios/create')}}" class="">Novo Município</a></li>
-                        <li class=""><a href="{{ url('/municipios')}}" class="">Consultar Municípios</a></li>
+                        <li class=""><a href="{{ url('/municipios/create')}}" class="">Nova Concessão</a></li>
+                        <li class=""><a href="{{ url('/municipios')}}" class="">Consultar Concessões</a></li>
 
                     </ul>
                 </li>
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/licenciamentos')) active @endif">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licenciamentos</span></a>
+                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licen. Camarários</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="{{ url('/licenciamentos/create')}}" class="">Novo Licenciamento</a></li>
                         <li class=""><a href="{{ url('/licenciamentos')}}" class="">Consultar Licenciamentos</a></li>

@@ -48,7 +48,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function infraestrutura(){
+/*    public function infraestrutura(){
 
         //user_id
         return $this->hasOne('App\Models\Infraestrutura');
@@ -61,7 +61,7 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Municipio');
 
     }
-
+*/
     // User has many infraestruturas
     public function infraestruturas(){
 

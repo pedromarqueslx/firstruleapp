@@ -28,31 +28,34 @@ Route::get('/', function () {
 
 });
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Route::group(['middleware'=>'web'], function() {
 Route::middleware('auth')->group(function () {
 
     Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
-    Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
-    Route::get('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
-    Route::get('/infraestruturas/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/infraestruturas/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@show')->name('infraestruturas.show');
+    Route::get('disponibilidades/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
     Route::post('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@store')->name('infraestruturas.store');
-    Route::get('/infraestruturas/edit', 'App\Http\Controllers\InfraestruturasController@edit')->name('infraestruturas.edit');
-    Route::patch('/infraestruturas/update', 'App\Http\Controllers\InfraestruturasController@update')->name('infraestruturas.update');
+    Route::get('disponibilidades/', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
 
 
-    Route::resource('/disponibilidades','App\Http\Controllers\InfraestruturasController');
+    //Route::get('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@show')->name('infraestruturas.show');
+    //Route::get('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
+    //Route::resource('/infraestruturas','App\Http\Controllers\InfraestruturasController');
+    //Route::get('/infraestruturas/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
+    //Route::post('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@store')->name('infraestruturas.store');
+    //Route::get('/infraestruturas/edit', 'App\Http\Controllers\InfraestruturasController@edit')->name('infraestruturas.edit');
+    //Route::patch('/infraestruturas/update', 'App\Http\Controllers\InfraestruturasController@update')->name('infraestruturas.update');
+
+    //Route::resource('/disponibilidades','App\Http\Controllers\InfraestruturasController');
     // The problem were is that it can link to Disponibilidades, Acessos or Cadastros
-    Route::get('/disponibilidades/{$infraestrutura}', [App\Http\Controllers\HomeController::class, 'show'])->name('disponibilidades');
+    //Route::get('/disponibilidades/{$infraestrutura}', [App\Http\Controllers\HomeController::class, 'show'])->name('disponibilidades');
 
-    Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
-    Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
-    Route::resource('/users','App\Http\Controllers\UsersController');
-    Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
+    //Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
+    //Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
+    //Route::resource('/users','App\Http\Controllers\UsersController');
+    //Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
     // use infraestruturas table ???
-    Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
+    // Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
 
 });
 

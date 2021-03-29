@@ -15,7 +15,7 @@
         <!--action="/infraestruturas"-->
         <form method="post" action="{{route('infraestruturas.store')}}" enctype="multipart/form-data">
 
-            <div class="row">
+           <div class="row">
                 <div class="col-md-3 mb-3 required">
                     <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX0000" placeholder="">
                     <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}" placeholder="">

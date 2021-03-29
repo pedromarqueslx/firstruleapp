@@ -14,7 +14,7 @@
                         <th>Ref. Oper.</th>
                         {{--<th>USER</th>--}}
                         <th>Pedido</th>
-                        <th>Oerador</th>
+                        <th>Operador</th>
                         <th>Requerente</th>
                         <th>Resp.</th>
                         <th>Acesso</th>
@@ -32,7 +32,7 @@
                         <th>Ref. Oper.</th>
                         {{--<th>USER</th>--}}
                         <th>Pedido</th>
-                        <th>Oerador</th>
+                        <th>Operador</th>
                         <th>Requerente</th>
                         <th>Resp.</th>
                         <th>Acesso</th>
@@ -45,24 +45,26 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    @foreach($infraestruturas as $infraestrutura)
-                        <tr>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
-                            {{--<td>{{$infraestrutura->user->name}}</td>--}}
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->nome_operador}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->resposta}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_acesso}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_acesso}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_cadastro}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_cadastro}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->municipio_id}}</a></td>
-                            <td><a href="{{route('disponibilidades.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
-                        </tr>
-                    @endforeach
+                         @foreach($infraestruturas as $infraestrutura)
+
+                             <tr>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
+                                 {{--<td>{{$infraestrutura->user->name}}</td>--}}
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->nome_operador}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->resposta}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_acesso}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_acesso}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_cadastro}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_cadastro}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->municipio_id}}</a></td>
+                                 <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
+                             </tr>
+
+                         @endforeach
                     </tbody>
                 </table>
             </div>

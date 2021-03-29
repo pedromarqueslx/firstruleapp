@@ -28,7 +28,6 @@ class InfraestruturasController extends Controller
     {
 
         $infraestruturas = Infraestrutura::all();
-        //return view('infraestruturas.index', compact('infraestruturas'));
         return view('infraestruturas.index', ['infraestruturas' => $infraestruturas]);
 
     }
@@ -58,7 +57,6 @@ class InfraestruturasController extends Controller
         //dd(request()->all());
         $inputs = request()->validate([
             'referencia_orait'   =>'required|max:40',
-
             'nome_operador' =>  '',
             'contribuinte_operador' =>  '',
             'morada_operador' =>  '',
@@ -99,8 +97,6 @@ class InfraestruturasController extends Controller
             'data_resposta_acesso' =>  '',
             'data_pedido_cadastro' =>  '',
             'data_resposta_cadastro' =>  '',
-
-
             'referencia_operador'=>'required|max:40',
             'municipio_id'       =>'required|max:40',
             'municipio_cartas'   =>'required|max:20',
@@ -108,7 +104,6 @@ class InfraestruturasController extends Controller
             //'anexo'            =>'file',
             'cvp_entrada'        =>'required|max:50',
             'responsavel_operador' => '',
-
             'user_name' => '',
             'user_contribuinte' => '',
             'user_morada' => '',
@@ -146,12 +141,10 @@ class InfraestruturasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Infraestrutura $infraestruturas)
     {
 
-        $infraestruturas = Infraestrutura::findOrFail($id);
-
-        return view('infraestruturas.show', compact('infraestruturas'));
+        return view('infraestruturas.show', ['infraestruturas' => $infraestruturas]);
 
     }
 

@@ -2,7 +2,7 @@
 @section('content')
 
     <h1>Pedidos de Disponibilidade</h1>
-    <p><a href="{{route('infraestruturas.edit', $infraestruturas->id)}}">{{$infraestruturas->referencia_orait}}</a></p>
+    <p><a href="{{--{{route('infraestruturas.edit', $infraestruturas->id)}}--}}">{{$infraestruturas->referencia_orait}}</a></p>
 
     <div class="card Recent-Users">
         <div class="card-block px-3 py-4">
@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" name="referencia_orait" placeholder="referencia_orait" value="{{$infraestruturas->referencia_orait}}" readonly>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <input type="text" class="form-control" name="user_id" value="{{$infraestruturas->user_id}}" readonly>
+                        <input type="text" class="form-control" name="user_id" value="{{Auth::user()->id}}" readonly>
                     </div>
                 </div>
 
