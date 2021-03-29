@@ -32,10 +32,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/infraestruturas/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@show')->name('infraestruturas.show');
-    Route::get('disponibilidades/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
-    Route::post('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@store')->name('infraestruturas.store');
-    Route::get('disponibilidades/', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
+
+    Route::get('infraestruturas/', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
+    Route::get('infraestruturas/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@show')->name('infraestruturas.show');
+    Route::get('infraestrutura/create', 'App\Http\Controllers\InfraestruturasController@create')->name('infraestruturas.create');
+    Route::post('infraestruturas', 'App\Http\Controllers\InfraestruturasController@store')->name('infraestruturas.store');
+
+    Route::get('infraestrutura/edit/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@edit')->name('infraestruturas.edit');
+    Route::delete('infraestruturas/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@destroy')->name('infraestruturas.destroy');
+    Route::patch('infraestruturas/{infraestruturas}/update', 'App\Http\Controllers\InfraestruturasController@update')->name('infraestruturas.update');
 
 
     //Route::get('/infraestruturas', 'App\Http\Controllers\InfraestruturasController@show')->name('infraestruturas.show');

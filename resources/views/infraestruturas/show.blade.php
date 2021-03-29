@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Pedidos de Disponibilidade</h1>
+    <h1>SHOW Pedidos de Disponibilidade</h1>
     <p><a href="{{--{{route('infraestruturas.edit', $infraestruturas->id)}}--}}">{{$infraestruturas->referencia_orait}}</a></p>
 
     <div class="card Recent-Users">
@@ -70,6 +70,9 @@
 
                 <h3>Documentos em Anexo (PDF e KMZ)</h3>
                 <div class="row mb-5">
+
+                    <a href="{{($infraestruturas->anexo)}}" target="_blank" class="small">Anexo</a>
+
                 </div>
 
                 <h2>Disponibilidade de Infraestruturas</h2>
@@ -271,7 +274,11 @@
 
             </form>
 
+{{--
             <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
+--}}
+
+            <form method="post" action="{{route('infraestruturas.destroy', $infraestruturas->id)}}" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" name="delete" value="Apagar pedido" class="btn btn-primary mx-auto d-block">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>

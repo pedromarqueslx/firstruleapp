@@ -50,7 +50,7 @@
                              <tr>
                                  <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
                                  <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
-                                 {{--<td>{{$infraestrutura->user->name}}</td>--}}
+                                 {{--<td>{{auth()->user()->name}}</td>--}}
                                  <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
                                  <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->nome_operador}}</a></td>
                                  <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>

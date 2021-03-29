@@ -1,20 +1,22 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Pedido de Disponibilidade</h1>
+    <h1>EDIT Pedido de Disponibilidade</h1>
     <p>{{$infraestruturas->referencia_orait}}</p>
 
     <div class="card">
         <div class="card-block px-3 py-4">
             {{--infraestruturas/{{$infraestruturas->id}}--}}
-            <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}">
-            @method('PATCH')
+            <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
+            {{--@method('PATCH')--}}
             <div class="row">
-                <div class="col-md-3 mb-3">
-                    <input type="text" class="form-control" name="referencia_orait" placeholder="referencia_orait" value="{{$infraestruturas->referencia_orait}}" readonly>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <input type="text" class="form-control" name="user_id" value="{{$infraestruturas->user_id}}" readonly>
+                <div class="col-md-3 mb-3 required">
+                    <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX0000" placeholder="">
+                    <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_contribuinte" id="user_contribuinte" value="{{auth()->user()->contribuinte}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_morada" id="user_morada" value="{{auth()->user()->morada}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_telefone" id="user_telefone" value="{{auth()->user()->telefone}}" placeholder="">
+                    <input type="hidden" class="form-control" name="user_email" id="user_email" value="{{auth()->user()->email}}" placeholder="">
                 </div>
             </div>
 
@@ -69,8 +71,7 @@
             </div>
 
             <h3>Documentos em Anexo (PDF e KMZ)</h3>
-                <div>{{$infraestruturas->anexo}}</div>
-                <div><img src="{{$infraestruturas->anexo}}"></div>
+                <p><a href="{{$infraestruturas->anexo}}" target="_blank">anexo</a></p>
             <div class="row mb-5">
                 <label for="file"></label>
                 <input type="file" class="form-control-file" name="anexo" id="anexo">
@@ -269,17 +270,17 @@
                 </div>
             </div>
 
-                <input name="_method" type="hidden" value="PUT"/>
+                <input name="_method" type="hidden" value="PATCH"/>
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <input type="submit"  name="submit" value="Submeter Pedido de Disponibilidade" class="btn btn-success mx-auto d-block">
 
             </form>
 
-            <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
+{{--            <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" name="delete" value="Apagar pedido" class="btn btn-primary mx-auto d-block">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-            </form>
+            </form>--}}
 
         </div>
     </div>
