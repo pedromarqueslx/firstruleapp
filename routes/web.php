@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
     Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
 
+    Route::get('admin/user/{user}/profile', 'App\Http\Controllers\UserController@show')->name('user.profile.show');
 });
 
 

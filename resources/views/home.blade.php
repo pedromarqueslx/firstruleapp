@@ -3,6 +3,7 @@
 @section('content')
     <h1>{{ __('Intervenções em Infraestruturas de Telecomunicações') }}</h1>
 
+    @if(auth()->user()->userHasRole('Admin'))
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -70,6 +71,7 @@
             </div>
         </div>
     </div>
+    @endif
 
 @endsection
 
