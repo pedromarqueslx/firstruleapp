@@ -48,49 +48,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-/*    public function infraestrutura(){
 
-        //user_id
-        return $this->hasOne('App\Models\Infraestrutura');
-
-    }
-
-    public function municipio(){
-
-        //user_id
-        return $this->hasOne('App\Models\Municipio');
-
-    }
-*/
-    // User has many infraestruturas
     public function infraestruturas(){
 
         return $this->hasMany('App\Models\Infraestrutura');
     }
 
+    public function permissions(){
+
+        return $this->belongsToMany(Permission::class);
+
+    }
+
     public function roles(){
 
-        // To customize table names and columns
-        //return $this->belongsToMany('App\Models\Role', 'role_user', 'user_id','role_id');
-        return $this->belongsToMany('App\Models\Role')->withPivot('created_at');
+        return $this->belongsToMany(Role::class);
 
     }
-
-
-    public function role(){
-
-        return $this->belongsTo('App\Models\Role');
-
-    }
-
-
-    public function isAdmin(){
-
-        if($this->role->name == 'administrator'){
-            return true;
-        }
-            return false;
-    }
-
 
 }

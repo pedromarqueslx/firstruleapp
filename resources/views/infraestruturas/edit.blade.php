@@ -6,9 +6,7 @@
 
     <div class="card">
         <div class="card-block px-3 py-4">
-            {{--infraestruturas/{{$infraestruturas->id}}--}}
             <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
-            {{--@method('PATCH')--}}
             <div class="row">
                 <div class="col-md-3 mb-3 required">
                     <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX0000" placeholder="">

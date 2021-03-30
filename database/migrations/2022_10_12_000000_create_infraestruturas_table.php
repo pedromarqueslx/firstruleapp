@@ -15,8 +15,8 @@ class CreateInfraestruturasTable extends Migration
     {
         Schema::create('infraestruturas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->nullable($value = true);
-            //$table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            //$table->integer('user_id')->nullable($value = true);
             $table->string('referencia_orait')->nullable($value = true);
             $table->string('user_name')->nullable($value = true);
             $table->string('user_contribuinte')->nullable($value = true);
@@ -65,9 +65,9 @@ class CreateInfraestruturasTable extends Migration
             $table->date('data_resposta_acesso')->nullable($value = true);
             $table->date('data_pedido_cadastro')->nullable($value = true);
             $table->date('data_resposta_cadastro')->nullable($value = true);
-            $table->timestamps();
             $table->softDeletes();
             $table->integer('is_admin')->default(0);
+            $table->timestamps();
         });
     }
 

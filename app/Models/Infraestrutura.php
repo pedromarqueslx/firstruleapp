@@ -13,18 +13,18 @@ class Infraestrutura extends Model
 
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $date = ['deleted_at'];
 
     protected $fillable = [
         'user_id',
         'referencia_orait',
-
         'user_name',
         'user_contribuinte',
         'user_morada',
         'user_telefone',
         'user_email',
-
         'referencia_operador',
         'responsavel_operador',
         'telefone_responsavel_operador',
@@ -71,8 +71,6 @@ class Infraestrutura extends Model
     public function user(){
 
         return $this->belongsTo('App\Models\User');
-        //return $this->belongsTo('App\Models\User', 'user_id');
-        //return $this->belongsTo(User::class);
 
     }
 

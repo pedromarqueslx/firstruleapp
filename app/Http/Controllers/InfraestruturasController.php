@@ -55,11 +55,6 @@ class InfraestruturasController extends Controller
     {
         $inputs = request()->validate([
             'referencia_orait'   =>'required|max:40',
-            'nome_operador' =>  '',
-            'contribuinte_operador' =>  '',
-            'morada_operador' =>  '',
-            'telefone_operador' =>  '',
-            'email_operador' =>  '',
             'telefone_responsavel_operador' =>  '',
             'email_responsavel_operador' =>  '',
             'cvp_entrada_ponto_entrada' =>  '',
@@ -139,9 +134,9 @@ class InfraestruturasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //public function edit($id)
      public function edit(Infraestrutura $infraestruturas)
     {
+        //$this->authorize('view', $infraestruturas);
 
         return view('infraestruturas.edit', ['infraestruturas' => $infraestruturas]);
 
@@ -212,11 +207,6 @@ class InfraestruturasController extends Controller
         }
 
         $infraestruturas->referencia_orait = $inputs['referencia_orait'];
-        //$infraestruturas->nome_operador = $inputs['nome_operador'];
-        //$infraestruturas->contribuinte_operador = $inputs['contribuinte_operador'];
-        //$infraestruturas->morada_operador = $inputs['morada_operador'];
-        //$infraestruturas->telefone_operador = $inputs['telefone_operador'];
-        //$infraestruturas->email_operador = $inputs['email_operador'];
         $infraestruturas->telefone_responsavel_operador = $inputs['telefone_responsavel_operador'];
         $infraestruturas->email_responsavel_operador = $inputs['email_responsavel_operador'];
         $infraestruturas->cvp_entrada_ponto_entrada = $inputs['cvp_entrada_ponto_entrada'];
@@ -263,13 +253,13 @@ class InfraestruturasController extends Controller
         $infraestruturas->user_telefone = $inputs['user_telefone'];
         $infraestruturas->user_email = $inputs['user_email'];
 
+        $this->authorize('update', $infraestruturas);
 
-        auth()->user()->infraestruturas()->save($infraestruturas);
+        $infraestruturas->update();
 
         session()->flash('message', $inputs['referencia_orait'] . ' - Atualizado com sucesso');
 
-        return back();
-        //return redirect()->route('infraestruturas.index');
+        return redirect()->route('infraestruturas.index');
 
     }
 
@@ -282,7 +272,6 @@ class InfraestruturasController extends Controller
     public function destroy(Infraestrutura $infraestruturas)
     {
 
-        //$infraestruturas = Infraestrutura::findOrFail($id);
         $infraestruturas->delete();
 
         session()->flash('message', 'Registo apagado');
