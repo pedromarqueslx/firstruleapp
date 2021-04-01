@@ -23,7 +23,7 @@ return [
     'Forgot Your Password?' => 'Esqueceu-se da senha?',
 
 
-    'Register Title' => 'Criar perfil',
+    'Register Title' => 'Criar Registo',
     'Register Text' => 'Os dados registados serão utilizados na simplificação de pedidos de disponibilidade e de acessibilidade às infraestruturas de telecomunicações.',
     'Register Name' => 'Nome do Operador',
     'Register E-Mail Address' => 'E-mail',
@@ -43,8 +43,8 @@ return [
     'Resp Operator Phone' => 'Telefone do Responsável do Operador',
 
     'Login title' => 'Gestão de Infraestruturas de Redes de Telecomunicações',
-    'Register Create Account' => 'Pretendo criar uma conta:',
-    'Register' => 'Criar perfil',
+    'Register Create Account' => 'Registo de utilizador. Criar acesso a área reservada para serviços de infraestruturas:',
+    'Register' => 'Criar Registo',
 
     'Reset Password' => 'Redefinir senha',
     'Send Password Reset Link' => 'Enviar link para Redefinir senha',

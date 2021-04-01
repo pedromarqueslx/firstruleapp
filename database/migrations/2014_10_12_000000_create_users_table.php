@@ -20,12 +20,18 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('tipo_entidade')->nullable($value = true);
+            $table->string('sector_atividade')->nullable($value = true);
+            $table->string('codigo_certidao')->nullable($value = true);
             $table->string('morada')->nullable($value = true);
+            $table->string('codigo_postal')->nullable($value = true);
             $table->string('contribuinte')->nullable($value = true);
             $table->string('telefone')->nullable($value = true);
+            $table->string('pais')->nullable($value = true);
             $table->string('nome_responsavel_operador')->nullable($value = true);
             $table->string('email_responsavel_operador')->nullable($value = true);
             $table->string('telefone_responsavel_operador')->nullable($value = true);
+            $table->string('anexos')->nullable($value = true);
             $table->rememberToken();
             $table->timestamps();
         });
