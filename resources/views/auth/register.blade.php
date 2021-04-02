@@ -49,7 +49,7 @@
                 <h2 class="mt-3">Tipo de Atividade</h2>
 
                 <div class="row mb-2">
-                    <div class="col-md-5 mb-2 required">
+                    <div class="col-md-4 mb-2 required">
                     <label for="tipo_entidade">Tipo de entidade</label>
                     <select id="tipo_entidade" class="form-control" name="tipo_entidade" required="">
                         <option disabled selected value></option>
@@ -69,9 +69,9 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                </div>
+                    </div>
 
-                    <div class="col-md-5 mb-2 required">
+                    <div class="col-md-4 mb-2 required">
                         <label for="sector_atividade">Sector de atividade</label>
                         <select id="sector_atividade" class="form-control" name="sector_atividade" required="">
                             <option disabled selected value></option>
@@ -92,9 +92,6 @@
                         @enderror
                     </div>
 
-                </div>
-
-                <div class="row mb-2">
                     <div class="col-md-3 mb-2 required">
                         <label for="codigo_certidao">Código de acesso à certidão permanente</label>
                         <input id="codigo_certidao" type="text" class="form-control @error('codigo_certidao') is-invalid @enderror" name="codigo_certidao" value="{{ old('codigo_certidao') }}" required >
@@ -116,7 +113,6 @@
                         </span>
                         @enderror
                     </div>
-
                     <div class="col-md-2 mb-2 required">
                         <label for="codigo_postal">Código Postal</label>
                         <input id="codigo_postal" type="text" class="form-control @error('codigo_postal') is-invalid @enderror" name="codigo_postal" value="{{ old('codigo_postal') }}" required >
@@ -126,7 +122,6 @@
                         </span>
                         @enderror
                     </div>
-
                     <div class="col-md-3 mb-2 required">
                         <label for="contribuinte">Nº Contribuinte</label>
                         <input id="contribuinte" type="text" class="form-control @error('contribuinte') is-invalid @enderror" name="contribuinte" value="{{ old('contribuinte') }}" required autocomplete="contribuinte">
@@ -152,7 +147,6 @@
                     <div class="col-md-3 mb-2 required">
                         <label for="name">País</label>
                         <select class="form-control" name="pais" id="pais" required="">
-                            <option value="Brasil" selected="selected">Brasil</option>
                             <option value="Afeganistão">Afeganistão</option>
                             <option value="África do Sul">África do Sul</option>
                             <option value="Albânia">Albânia</option>
@@ -181,6 +175,7 @@
                             <option value="Bielorrússia">Bielorrússia</option>
                             <option value="Bolívia">Bolívia</option>
                             <option value="Botswana">Botswana</option>
+                            <option value="Brasil">Brasil</option>
                             <option value="Brunei">Brunei</option>
                             <option value="Bulgária">Bulgária</option>
                             <option value="Burkina Faso">Burkina Faso</option>
@@ -445,7 +440,7 @@
                         <button type="submit" class="btn btn-success mx-auto">
                             {{ __('auth.Register') }}
                         </button>
-                        <p class="text-center small">Autorizo o envio de notificações com alertas sobre os prazos legais em vigor, para acessibilidade a infraestruturas de telecomunicações.</p>
+                        <p class="text-center small p-3">Autorizo o envio de notificações com alertas sobre os prazos legais em vigor, para acessibilidade a infraestruturas de telecomunicações.</p>
                     </div>
                 </div>
 

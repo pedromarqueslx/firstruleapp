@@ -19,14 +19,20 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'email_verified_at ',
+        'email_verified_at',
         'password',
+        'tipo_entidade',
+        'sector_atividade',
+        'codigo_certidao',
         'morada',
+        'codigo_postal',
         'contribuinte',
         'telefone',
+        'pais',
         'nome_responsavel_operador',
         'email_responsavel_operador',
         'telefone_responsavel_operador',
+        'anexos',
     ];
 
     /**
@@ -48,26 +54,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function setPasswordAttribute($value) {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    //Accessor for image URL
+    public function getAnexosAttribute($value){
+        return asset('storage/'. $value);
+    }
 
     public function infraestruturas(){
-
         return $this->hasMany('App\Models\Infraestrutura');
     }
 
     public function permissions(){
-
         return $this->belongsToMany(Permission::class);
-
     }
 
     public function roles(){
-
         return $this->belongsToMany(Role::class);
-
     }
 
-    public function userHasRole($role_name){
 
+
+    public function userHasRole($role_name){
         foreach($this->roles as $role) {
             if ($role_name == $role->name)
                 return true;

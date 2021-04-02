@@ -6937,7 +6937,7 @@ pre[class*=language-]:after, pre[class*=language-]:before {
 .custom-select,
 .form-control {
   background: #f4f7fa;
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 14px;
 }
 .custom-select:focus,
@@ -6994,7 +6994,7 @@ pre[class*=language-]:after, pre[class*=language-]:before {
 /* input group End */
 /**====== Form Componant css end ======**/
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.55rem + 2px);
+  height: calc(2rem + 2px);
 }
 
 .input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]),

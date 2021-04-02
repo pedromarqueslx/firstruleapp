@@ -76,9 +76,7 @@ class Infraestrutura extends Model
 
     //Accessor for image URL
     public function getAnexoAttribute($value){
-
         return asset('storage/'. $value);
-
     }
 
 }

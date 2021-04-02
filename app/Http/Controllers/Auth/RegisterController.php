@@ -53,9 +53,14 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'tipo_entidade' => ['required', 'string', 'min:8'],
+            'sector_atividade' => ['required', 'string', 'min:8'],
+            'codigo_certidao' => ['required', 'string'],
             'morada' => ['required', 'string', 'max:255'],
+            'codigo_postal' => ['required', 'string', 'max:255'],
             'contribuinte' => ['required', 'string', 'max:255'],
             'telefone' => ['required', 'string', 'max:255'],
+            'pais' => ['required', 'string'],
         ]);
     }
 
@@ -70,14 +75,20 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            //'password' => Hash::make($data['password']),
+            'password' => $data['password'],
+            'tipo_entidade' => $data['tipo_entidade'],
+            'sector_atividade' => $data['sector_atividade'],
+            'codigo_certidao' => $data['codigo_certidao'],
             'morada' => $data['morada'],
+            'codigo_postal' => $data['codigo_postal'],
             'contribuinte' => $data['contribuinte'],
             'telefone' => $data['telefone'],
             'nome_responsavel_operador' => $data['nome_responsavel_operador'],
             'email_responsavel_operador' => $data['email_responsavel_operador'],
             'telefone_responsavel_operador' => $data['telefone_responsavel_operador'],
-
+            'pais' => $data['pais'],
+            'anexos' => $data['anexos'],
         ]);
     }
 }

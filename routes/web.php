@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
 
     Route::get('admin/user/{user}/profile', 'App\Http\Controllers\UserController@show')->name('user.profile.show');
+    Route::put('admin/user/{user}/update', 'App\Http\Controllers\UserController@update')->name('user.profile.update');
+
 });
 
 
