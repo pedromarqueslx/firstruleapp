@@ -33,6 +33,19 @@ class InfraestruturasController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Infraestrutura $infraestruturas)
+    {
+
+        return view('infraestruturas.show', ['infraestruturas' => $infraestruturas]);
+
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -115,18 +128,6 @@ class InfraestruturasController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Infraestrutura $infraestruturas)
-    {
-
-        return view('infraestruturas.show', ['infraestruturas' => $infraestruturas]);
-
-    }
 
     /**
      * Show the form for editing the specified resource.
