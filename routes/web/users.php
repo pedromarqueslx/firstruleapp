@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function (){
 Route::middleware(['role:admin','auth'])->group(function (){
 
     Route::get('admin/users', 'App\Http\Controllers\UserController@index')->name('users.index');
+    Route::put('/users/{user}/attach', 'App\Http\Controllers\UserController@attach')->name('user.role.attach');
+    Route::put('/users/{user}/detach', 'App\Http\Controllers\UserController@detach')->name('user.role.detach');
 
 });
 

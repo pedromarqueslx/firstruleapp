@@ -4,6 +4,7 @@
 <h1>{{$user->name }}</h1>
 
 <div class="card">
+
     <div class="card-block px-3 py-4">
         <form method="post" action="{{route('user.profile.update', $user)}}" enctype="multipart/form-data">
             @csrf
@@ -445,7 +446,72 @@
         --}}
 
     </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="users-table">
+                    <thead>
+                    <tr>
+                        <th>Options</th>
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>Slug</th>
+                        <th>Attach</th>
+                        <th>Detach</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Options</th>
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>Slug</th>
+                        <th>Attach</th>
+                        <th>Dettach</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    @foreach($roles as $role)
+                        <tr>
+                            <td><input type="checkbox"
+                                @foreach($user->roles as $user_role)
+                                    @if($user_role->slug == $role->slug)
+                                        checked
+                                    @endif
+                                @endforeach
+                                ></td>
+                            <td><a href="">{{$role->id}}</a></td>
+                            <td><a href="">{{$role->id}}</a></td>
+                            <td><a href="">{{$role->id}}</a></td>
+                            <td>
+                                <form method="post" action="{{route('user.role.attach', $user)}}">
+                                    @method('PUT')
+                                    @csrf
+                                    <input type="hidden" name="role" value="{{$role->id}}">
+                                    <button class="btn btn-primary" @if($user->roles->contains($role)) disabled @endif>Attach</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="post" action="{{route('user.role.detach', $user)}}">
+                                    @method('PUT')
+                                    @csrf
+                                    <input type="hidden" name="role" value="{{$role->id}}">
+                                    <button class="btn btn-primary" @if(!$user->roles->contains($role)) disabled @endif>Dettach</button>
+                                </form>
+                             </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+
 
 @endsection
 

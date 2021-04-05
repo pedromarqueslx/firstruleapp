@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,12 @@ class UserController extends Controller
 
     public function show(User $user){
 
-        return view('admin.users.profile', ['user'=>$user]);
+        return view('admin.users.profile', [
+
+            'user'=>$user,
+            'roles'=>Role::all(),
+
+        ]);
     }
 
     public function index()
@@ -49,6 +55,24 @@ class UserController extends Controller
 
         return back();
 
+    }
+
+    public function attach(User $user){
+
+        //dd($user);
+        //dd(request('role'));
+        $user->roles()->attach(request('role'));
+
+        return back();
+    }
+
+    public function detach(User $user){
+
+        //dd($user);
+        //dd(request('role'));
+        $user->roles()->detach(request('role'));
+
+        return back();
     }
 
     public function destroy(User $user){
