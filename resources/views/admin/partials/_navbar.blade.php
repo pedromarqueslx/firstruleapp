@@ -44,11 +44,15 @@
                     </ul>--}}
                 </li>
 
+                @if(auth()->user()->userHasRole('Admin'))
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
                     <ul class="pcoded-submenu">
+ {{--
                         <li class=""><a href="{{ url('/users/create')}}" class="">Novo Operador</a></li>
                         <li class=""><a href="{{ url('/users')}}" class="">Consultar Operadores</a></li>
+ --}}                   <li class=""><a href="" class="">Novo Operador</a></li>
+                        <li class=""><a href="{{ route('users.index')}}" class="">Consultar Operadores</a></li>
 
                     </ul>
                 </li>
@@ -61,6 +65,7 @@
 
                     </ul>
                 </li>
+                @endif
 
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/licenciamentos')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Licen. Camarários</span></a>

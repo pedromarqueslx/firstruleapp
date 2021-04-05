@@ -13,6 +13,15 @@ class UserController extends Controller
         return view('admin.users.profile', ['user'=>$user]);
     }
 
+    public function index()
+    {
+
+        $users = User::all();
+
+        return view('admin.users.index', ['users'=>$users]);
+
+    }
+
     public function update(User $user){
 
         $inputs = request()->validate([
@@ -37,6 +46,16 @@ class UserController extends Controller
         }
 
         $user->update($inputs);
+
+        return back();
+
+    }
+
+    public function destroy(User $user){
+
+        $user->delete();
+
+        session()->flash('user-deleted', 'Dados do operador apagados');
 
         return back();
 

@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
+    //Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin.index');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('infraestruturas/', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
@@ -43,12 +43,22 @@ Route::middleware('auth')->group(function () {
 
     //Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
     //Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
-    Route::resource('/users','App\Http\Controllers\UsersController');
+    //Route::resource('/users','App\Http\Controllers\UsersController');
+
     Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
     Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
 
     Route::get('admin/user/{user}/profile', 'App\Http\Controllers\UserController@show')->name('user.profile.show');
     Route::put('admin/user/{user}/update', 'App\Http\Controllers\UserController@update')->name('user.profile.update');
+
+    Route::get('admin/users/edit', 'App\Http\Controllers\UserController@edit')->name('users.edit');
+    Route::delete('admin/users/{user}/destroy', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
+
+});
+
+Route::middleware('role:admin')->group(function (){
+
+    Route::get('admin/users', 'App\Http\Controllers\UserController@index')->name('users.index');
 
 });
 

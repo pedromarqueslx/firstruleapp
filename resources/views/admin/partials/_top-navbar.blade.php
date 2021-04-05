@@ -16,7 +16,9 @@
                         <span>{{ Auth::user()->name }}</span>
                     </div>
                     <ul class="pro-body">
+{{--
                         <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-settings"></i> Gestão</a></li>
+--}}
                         <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-user"></i>Dados de Utilizador</a></li>
                         <li>
                             <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
