@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function (){
 
     Route::resource('/concessoes','App\Http\Controllers\ConcessoesController');
-    //Route::delete('admin/users/{user}/destroy', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
 
 });
