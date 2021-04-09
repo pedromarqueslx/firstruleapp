@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Municipio extends Model
+class Concessoe extends Model
 {
     use HasFactory;
     //use SoftDeletes;

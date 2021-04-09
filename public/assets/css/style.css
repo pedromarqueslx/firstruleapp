@@ -7697,11 +7697,11 @@ a.btn-theme.active {
 }
 
 .btn {
-  padding: 10px 20px;
-  border-radius: 0.25rem;
+  /*padding: 10px 20px;
+  border-radius: 0.25rem;*/
   font-size: 14px;
-  margin-bottom: 5px;
-  margin-right: 10px;
+/*  margin-bottom: 5px;
+  margin-right: 10px;*/
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -7809,27 +7809,6 @@ a.btn-theme.active {
   background-color: #5d6e76;
   border-color: #57676f;
 }
-
-/*.btn-success {
-  color: #fff;
-  background-color: #027BCA;
-  border-color: #027BCA;
-}
-.btn-success:hover {
-  color: #fff;
-  background-color: #14cc9e;
-  border-color: #13c095;
-}
-.btn-success.disabled, .btn-success:disabled {
-  color: #fff;
-  background-color: #027BCA;
-  border-color: #027BCA;
-}
-.btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show > .btn-success.dropdown-toggle {
-  color: #fff;
-  background-color: #13c095;
-  border-color: #12b58c;
-}*/
 
 .btn-info {
   color: #fff;
@@ -10161,7 +10140,7 @@ div.code-toolbar > .toolbar span:hover {
       Icon layouts css start
 ==========================  **/
 .i-main .i-block {
-  display: -webkit-inline-box;
+  /*display: -webkit-inline-box;*/
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;

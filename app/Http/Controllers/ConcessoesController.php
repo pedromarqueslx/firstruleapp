@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Municipio;
+use App\Models\Concessoe;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\In;
 
 
-class MunicipiosController extends Controller
+class ConcessoesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,9 +26,9 @@ class MunicipiosController extends Controller
      */
     public function index()
     {
-        $municipios = Municipio::all();
+        $concessoes = Concessoe::all();
 
-        return view('municipios.index', compact('municipios'));
+        return view('concessoes.index', compact('concessoes'));
     }
 
     /**
@@ -39,7 +39,7 @@ class MunicipiosController extends Controller
     public function create()
     {
 
-        return view('municipios.create');
+        return view('concessoes.create');
 
     }
 
@@ -60,11 +60,11 @@ class MunicipiosController extends Controller
             'morada'=>'required'
         ]);
 
-        Municipio::create($request->all());
+        Concessoe::create($request->all());
 
-        session()->flash('message', 'Município criado com sucesso');
+        session()->flash('message', 'Concessão criada com sucesso');
 
-        return  redirect('/municipios');
+        return  redirect('/concessoes');
 
     }
 
@@ -77,9 +77,9 @@ class MunicipiosController extends Controller
     public function show($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $concessoes = Concessoe::findOrFail($id);
 
-        return view('municipios.show', compact('municipios'));
+        return view('concessoes.show', compact('concessoes'));
 
     }
 
@@ -92,9 +92,9 @@ class MunicipiosController extends Controller
     public function edit($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $concessoes = Concessoe::findOrFail($id);
 
-        return view('municipios.edit', compact('municipios'));
+        return view('concessoes.edit', compact('concessoes'));
 
     }
 
@@ -108,11 +108,11 @@ class MunicipiosController extends Controller
     public function update(Request $request, $id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $concessoes = Concessoe::findOrFail($id);
 
-        $municipios->update($request->all());
+        $concessoes->update($request->all());
 
-        return redirect('/municipios');
+        return redirect('/concessoes');
 
     }
 
@@ -125,11 +125,11 @@ class MunicipiosController extends Controller
     public function destroy($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $concessoes = Concessoe::findOrFail($id);
 
-        $municipios->delete();
+        $concessoes->delete();
 
-        return redirect('/municipios');
+        return redirect('/concessoes');
 
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Municípios</h1>
+    <h1>Concessões</h1>
     @if(session('message'))
         <div class="alert alert-success">{{session('message')}}</div>
     @endif
@@ -18,11 +18,10 @@
                         <th>email</th>
                         <th>contribuinte</th>
                         <th>telefone</th>
-                        <th>morada</th>
                         <th>responsavel</th>
                         <th>responsavel_telefone</th>
                         <th>responsavel_email</th>
-                        <th>observacoes</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -33,27 +32,31 @@
                         <th>email</th>
                         <th>contribuinte</th>
                         <th>telefone</th>
-                        <th>morada</th>
                         <th>responsavel</th>
                         <th>responsavel_telefone</th>
                         <th>responsavel_email</th>
-                        <th>observacoes</th>
+                        <th></th>
                     </tr>
                     </tfoot>
                     <tbody>
-                    @foreach($municipios as $municipio)
+                    @foreach($concessoes as $concessao)
                         <tr>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->id}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->user_id}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->nome}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->email}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->contribuinte}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->telefone}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->morada}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->responsavel}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->responsavel_telefone}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->responsavel_email}}</a></td>
-                            <td><a href="{{route('municipios.edit', $municipio->id)}}">{{$municipio->observacoes}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->id}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->user_id}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->nome}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->email}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->contribuinte}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->telefone}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->responsavel}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->responsavel_telefone}}</a></td>
+                            <td><a href="{{route('concessoes.edit', $concessao->id)}}">{{$concessao->responsavel_email}}</a></td>
+                            <td>
+                                <form method="post" class="text-center" action="{{route('concessoes.destroy', $concessao->id)}}">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-danger">Apagar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

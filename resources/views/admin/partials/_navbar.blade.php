@@ -20,7 +20,7 @@
                     <a href="{{ url('/home') }}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Home</span></a>
                 </li>
 
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
+                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif @if(str_contains(url()->current(), '/infraestrutura')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="{{route('infraestruturas.create')}}" class="">Novo Pedido</a></li>
@@ -37,7 +37,7 @@
                 </li>
 
                 <li data-username="" class="nav-item @if(str_contains(url()->current(), '/cadastros')) active @endif">
-                    <a href="{{ url('/cadastros')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
+                    <a href="{{ url('/cadastros')}}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
 {{--                    <ul class="pcoded-submenu">
                         <li class=""><a href="{{ url('/cadastros/create')}}" class="">Novo Cadastro</a></li>
                         <li class=""><a href="{{ url('/cadastros')}}" class="">Consultar Cadastros</a></li>
@@ -45,23 +45,23 @@
                 </li>
 
                 @if(auth()->user()->userHasRole('Admin'))
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
+                <li data-username="" class="nav-item @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
+                    <a href="{{ route('users.index')}}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
+                    {{--
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Operadores</span></a>
                     <ul class="pcoded-submenu">
- {{--
                         <li class=""><a href="{{ url('/users/create')}}" class="">Novo Operador</a></li>
                         <li class=""><a href="{{ url('/users')}}" class="">Consultar Operadores</a></li>
- --}}                   <li class=""><a href="" class="">Novo Operador</a></li>
+                        <li class=""><a href="" class="">Novo Operador</a></li>
                         <li class=""><a href="{{ route('users.index')}}" class="">Consultar Operadores</a></li>
-
-                    </ul>
+                    </ul>--}}
                 </li>
 
-                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/municipios')) active @endif">
+                <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/concessoes')) active @endif">
                     <a href="javascript:" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">Concessões</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/municipios/create')}}" class="">Nova Concessão</a></li>
-                        <li class=""><a href="{{ url('/municipios')}}" class="">Consultar Concessões</a></li>
+                        <li class=""><a href="{{ url('/concessoes/create')}}" class="">Nova Concessão</a></li>
+                        <li class=""><a href="{{ url('/concessoes')}}" class="">Consultar Concessões</a></li>
 
                     </ul>
                 </li>

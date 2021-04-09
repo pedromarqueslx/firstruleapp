@@ -1,13 +1,13 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Novo Município</h1>
+    <h1>Nova Concessão</h1>
 
 
     <div class="card">
         <div class="card-block px-3 py-4">
 
-            <form method="post" action="/municipios">
+            <form method="post" action="/concessoes">
 
 {{--                <div class="row">
                     <div class="col-md-3 mb-3 required">

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Municipio;
+use App\Models\Concessoe;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MunicipioFactory extends Factory
+class ConcessoeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Municipio::class;
+    protected $model = Concessoe::class;
 
     /**
      * Define the model's default state.

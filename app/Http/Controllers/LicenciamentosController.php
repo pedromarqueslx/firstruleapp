@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Licenciamento;
-use App\Models\Municipio;
+use App\Models\Concessoe;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\In;
 
@@ -61,7 +61,7 @@ class LicenciamentosController extends Controller
             'morada'=>'required'
         ]);
 
-        Municipio::create($request->all());
+        Concessoe::create($request->all());
 
         return  redirect('/licenciamentos');
 
@@ -76,7 +76,7 @@ class LicenciamentosController extends Controller
     public function show($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $municipios = Concessoe::findOrFail($id);
 
         return view('licenciamentos.show', compact('licenciamentos'));
 
@@ -91,7 +91,7 @@ class LicenciamentosController extends Controller
     public function edit($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $municipios = Concessoe::findOrFail($id);
 
         return view('licenciamentos.edit', compact('licenciamentos'));
 
@@ -124,7 +124,7 @@ class LicenciamentosController extends Controller
     public function destroy($id)
     {
 
-        $municipios = Municipio::findOrFail($id);
+        $municipios = Concessoe::findOrFail($id);
 
         $municipios->delete();
 

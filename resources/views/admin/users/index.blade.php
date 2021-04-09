@@ -15,45 +15,37 @@
                 <table class="table table-bordered" id="users-table">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>role_id</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>email_verified_at</th>
-                        <th>contribuinte</th>
-                        <th>telefone</th>
-                        <th>Apagar</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Verificado</th>
+                        <th>Nº Contr.</th>
+                        <th>Tel.</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>ID</th>
-                        <th>role_id</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>email_verified_at</th>
-                        <th>contribuinte</th>
-                        <th>telefone</th>
-                        <th>Apagar</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Verificado</th>
+                        <th>Nº Contr.</th>
+                        <th>Tel.</th>
+                        <th></th>
                     </tr>
                     </tfoot>
                     <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->id}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->role_id}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->email}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->email_verified_at}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->contribuinte}}</a></td>
-                            <td><a href="{{route('users.edit', $user->id)}}">{{$user->telefone}}</a></td>
+                            <td><a href="{{route('user.profile.show', $user->id)}}">{{$user->name}}</a></td>
+                            <td><a href="{{route('user.profile.show', $user->id)}}">{{$user->email}}</a></td>
+                            <td><a href="{{route('user.profile.show', $user->id)}}">{{$user->email_verified_at}}</a></td>
+                            <td><a href="{{route('user.profile.show', $user->id)}}">{{$user->contribuinte}}</a></td>
+                            <td><a href="{{route('user.profile.show', $user->id)}}">{{$user->telefone}}</a></td>
                             <td>
-                                <form method="post" action="{{route('users.destroy', $user->id)}}">
+                                <form method="post" class="text-center" action="{{route('users.destroy', $user->id)}}">
                                     @csrf
                                     @method('delete')
-
                                     <button class="btn btn-danger">Apagar</button>
-
                                 </form>
                             </td>
                         </tr>

@@ -13,8 +13,8 @@ class UserController extends Controller
 
         return view('admin.users.profile', [
 
-            'user'=>$user,
-            'roles'=>Role::all(),
+            'user' => $user,
+            'roles' => Role::all(),
 
         ]);
     }

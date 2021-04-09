@@ -447,71 +447,64 @@
 
     </div>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="users-table">
-                    <thead>
+    <!-- DataTales -->
+    @if(auth()->user()->userHasRole('Admin'))
+        <div class="card-block px-3 py-4">
+        <h2 class="">Gestão de Acessos</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="users-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Conceder Acesso</th>
+                    <th>Remover Acesso</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Conceder Acesso</th>
+                    <th>Remover Acesso</th>
+                </tr>
+                </tfoot>
+                <tbody>
+                @foreach($roles as $role)
                     <tr>
-                        <th>Options</th>
-                        <th>ID</th>
-                        <th>name</th>
-                        <th>Slug</th>
-                        <th>Attach</th>
-                        <th>Detach</th>
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    <tr>
-                        <th>Options</th>
-                        <th>ID</th>
-                        <th>name</th>
-                        <th>Slug</th>
-                        <th>Attach</th>
-                        <th>Dettach</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    @foreach($roles as $role)
-                        <tr>
-                            <td><input type="checkbox"
-                                @foreach($user->roles as $user_role)
-                                    @if($user_role->slug == $role->slug)
-                                        checked
+                        <td><input type="checkbox"
+                                   @foreach($user->roles as $user_role)
+                                   @if($user_role->slug == $role->slug)
+                                   checked
                                     @endif
-                                @endforeach
-                                ></td>
-                            <td><a href="">{{$role->id}}</a></td>
-                            <td><a href="">{{$role->id}}</a></td>
-                            <td><a href="">{{$role->id}}</a></td>
-                            <td>
-                                <form method="post" action="{{route('user.role.attach', $user)}}">
-                                    @method('PUT')
-                                    @csrf
-                                    <input type="hidden" name="role" value="{{$role->id}}">
-                                    <button class="btn btn-primary" @if($user->roles->contains($role)) disabled @endif>Attach</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form method="post" action="{{route('user.role.detach', $user)}}">
-                                    @method('PUT')
-                                    @csrf
-                                    <input type="hidden" name="role" value="{{$role->id}}">
-                                    <button class="btn btn-primary" @if(!$user->roles->contains($role)) disabled @endif>Dettach</button>
-                                </form>
-                             </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+                                    @endforeach
+                            ></td>
+                        <td>{{$role->name}}</td>
+                        <td>
+                            <form method="post" action="{{route('user.role.attach', $user)}}">
+                                @method('PUT')
+                                @csrf
+                                <input type="hidden" name="role" value="{{$role->id}}">
+                                <button class="btn btn-primary" @if($user->roles->contains($role)) disabled @endif>Conceder</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="{{route('user.role.detach', $user)}}">
+                                @method('PUT')
+                                @csrf
+                                <input type="hidden" name="role" value="{{$role->id}}">
+                                <button class="btn btn-primary" @if(!$user->roles->contains($role)) disabled @endif>Remover</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+    @endif
 
 </div>
-
-
 
 @endsection
 

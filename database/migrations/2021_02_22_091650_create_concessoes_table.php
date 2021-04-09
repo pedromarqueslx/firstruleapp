@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMunicipiosTable extends Migration
+class CreateConcessoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMunicipiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipios', function (Blueprint $table) {
+        Schema::create('concessoes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->nullable($value = true);
             $table->string('nome')->nullable($value = true);
@@ -36,6 +36,6 @@ class CreateMunicipiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('concessoes');
     }
 }

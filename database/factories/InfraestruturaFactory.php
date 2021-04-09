@@ -70,7 +70,6 @@ class InfraestruturaFactory extends Factory
             'data_resposta_acesso' => $this->faker->dateTime,
             'data_pedido_cadastro' => $this->faker->dateTime,
             'data_resposta_cadastro' => $this->faker->dateTime,
-
         ];
     }
 }

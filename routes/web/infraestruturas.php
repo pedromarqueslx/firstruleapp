@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Models\Municipio;
+use App\Models\Concessoe;
 use App\Models\Infraestrutura;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +24,5 @@ Route::middleware('auth')->group(function (){
     //Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
     //Route::resource('/users','App\Http\Controllers\UsersController');
 
-    Route::resource('/municipios','App\Http\Controllers\MunicipiosController');
-    Route::resource('/licenciamentos','App\Http\Controllers\LicenciamentosController');
 
 });
