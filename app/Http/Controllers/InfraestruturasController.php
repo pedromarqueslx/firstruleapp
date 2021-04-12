@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Infraestrutura;
+use App\Models\Concessoe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\In;
@@ -50,10 +51,13 @@ class InfraestruturasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Concessoe $concessoes)
     {
 
-        return view('infraestruturas.create');
+        $concessoes = Concessoe::all();
+        //return view('infraestruturas.index', ['infraestruturas' => $infraestruturas]);
+
+        return view('infraestruturas.create', ['concessoes' => $concessoes]);
 
     }
 

@@ -53,14 +53,23 @@ class LicenciamentosController extends Controller
     {
 
         $this->validate($request,[
-            'nome'=>'required|max:50',
-            'email'=>'required',
-            'contribuinte'=>'required|max:50',
-            'telefone'=>'required',
-            'morada'=>'required'
+            'user_id'=>'required|max:50',
+            'municipio'=>'required',
+            'referencia_orait'=>'required|max:50',
+            'data_inicio_trabalhos'=>'required',
+            'data_fim_trabalhos'=>'required',
+            'anexos'=>'file',
+            'data_envio_licenciamento_municipio'=>'',
+            'referencia_licenciamento_munipicio'=>'',
+            'data_autorizacao_municipio'=>'',
+            'data_envio_autorizacao_operador'=>'',
+            'observacoes'=>'',
+            'data'=>''
         ]);
 
         Licenciamento::create($request->all());
+
+        session()->flash('message', 'Licenciamento criado com sucesso');
 
         return  redirect('/licenciamentos');
 

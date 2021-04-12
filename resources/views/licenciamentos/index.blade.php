@@ -18,12 +18,12 @@
                         <th>Município</th>
                         <th>Data</th>
                         <th>Referência Orait</th>
-                        <th>Data Início trabalhos</th>
-                        <th>Data Fim trabalhos</th>
+                        <th>Data Início Trabalhos</th>
+                        <th>Data Fim Trabalhos</th>
                         <th>Data Envio licenciamento Município</th>
                         <th>Ref. licenciamento Município</th>
-                        <th>Data_autorizacao_municipio</th>
-                        <th>Data_envio_autorizacao_operador</th>
+                        <th>Data Autorizacao Município</th>
+                        <th>Data Envio Autorizacao Operador</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -34,12 +34,12 @@
                         <th>Município</th>
                         <th>Data</th>
                         <th>Referência Orait</th>
-                        <th>Data Início trabalhos</th>
-                        <th>Data Fim trabalhos</th>
+                        <th>Data Início Trabalhos</th>
+                        <th>Data Fim Trabalhos</th>
                         <th>Data Envio licenciamento Município</th>
                         <th>Ref. licenciamento Município</th>
-                        <th>Data_autorizacao_municipio</th>
-                        <th>Data_envio_autorizacao_operador</th>
+                        <th>Data Autorizacao Município</th>
+                        <th>Data Envio Autorizacao Operador</th>
                         <th></th>
                     </tr>
                     </tfoot>

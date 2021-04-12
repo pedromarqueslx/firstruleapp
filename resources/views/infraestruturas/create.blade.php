@@ -1,14 +1,23 @@
 @extends('layouts.menu')
 @section('content')
 
+
     <h1>Pedido de Disponibilidade</h1>
-    <p class="small">PD{{ now()->year }}XXX0000</p>
+    <?php
+    $infraestruturas_id = DB::table('infraestruturas')->max('id');
+    ?>
     <!-- Report errors -->
     @if(count($errors) > 0)
     @foreach($errors->all() as $error)
     <p class="small">{{$error}}</p>
     @endforeach
     @endif
+
+    @foreach($concessoes as $concessoe)
+        <ul>
+            <li>{{$concessoe->nome}}</li>
+        </ul>
+    @endforeach
 
     <div class="card">
         <div class="card-block px-3 py-4">
@@ -17,7 +26,7 @@
 
            <div class="row">
                 <div class="col-md-3 mb-3 required">
-                    <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX0000" placeholder="">
+                    <input type="" class="form-control" name="referencia_orait" id="referencia_orait" value="PD{{ now()->year }}XXX<?php echo ++$infraestruturas_id; ?>" placeholder="">
                     <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}" placeholder="">
                     <input type="hidden" class="form-control" name="user_contribuinte" id="user_contribuinte" value="{{auth()->user()->contribuinte}}" placeholder="">
                     <input type="hidden" class="form-control" name="user_morada" id="user_morada" value="{{auth()->user()->morada}}" placeholder="">

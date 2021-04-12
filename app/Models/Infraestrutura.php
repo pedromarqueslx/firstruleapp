@@ -69,9 +69,11 @@ class Infraestrutura extends Model
     ];
 
     public function user(){
-
         return $this->belongsTo('App\Models\User');
+    }
 
+    public function concessoes(){
+        return $this->belongsToMany(Concessoe::class);
     }
 
     //Accessor for image URL
