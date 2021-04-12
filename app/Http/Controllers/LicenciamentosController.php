@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Licenciamento;
-use App\Models\Concessoe;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\In;
 
@@ -27,7 +26,7 @@ class LicenciamentosController extends Controller
      */
     public function index()
     {
-        $municipios = Licenciamento::all();
+        $licenciamentos = Licenciamento::all();
 
         return view('licenciamentos.index', compact('licenciamentos'));
     }
@@ -61,7 +60,7 @@ class LicenciamentosController extends Controller
             'morada'=>'required'
         ]);
 
-        Concessoe::create($request->all());
+        Licenciamento::create($request->all());
 
         return  redirect('/licenciamentos');
 
@@ -76,7 +75,7 @@ class LicenciamentosController extends Controller
     public function show($id)
     {
 
-        $municipios = Concessoe::findOrFail($id);
+        $licenciamentos = Licenciamento::findOrFail($id);
 
         return view('licenciamentos.show', compact('licenciamentos'));
 
@@ -91,7 +90,7 @@ class LicenciamentosController extends Controller
     public function edit($id)
     {
 
-        $municipios = Concessoe::findOrFail($id);
+        $licenciamentos = Licenciamento::findOrFail($id);
 
         return view('licenciamentos.edit', compact('licenciamentos'));
 
@@ -107,9 +106,9 @@ class LicenciamentosController extends Controller
     public function update(Request $request, $id)
     {
 
-        $municipios = Licenciamento::findOrFail($id);
+        $licenciamentos = Licenciamento::findOrFail($id);
 
-        $municipios->update($request->all());
+        $licenciamentos->update($request->all());
 
         return redirect('/licenciamentos');
 
@@ -124,9 +123,9 @@ class LicenciamentosController extends Controller
     public function destroy($id)
     {
 
-        $municipios = Concessoe::findOrFail($id);
+        $licenciamentos = Licenciamento::findOrFail($id);
 
-        $municipios->delete();
+        $licenciamentos->delete();
 
         return redirect('/licenciamentos');
 

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 //use Illuminate\Database\Eloquent\SoftDeletes;
 
-
 class Licenciamento extends Model
 {
     use HasFactory;
@@ -16,15 +15,18 @@ class Licenciamento extends Model
 
     protected $fillable = [
         'user_id',
-        'nome',
-        'email',
-        'contribuinte',
-        'telefone',
-        'morada',
-        'responsavel',
-        'responsavel_telefone',
-        'responsavel_email',
-        'observacoes'
+        'municipio',
+        'data',
+        'referencia_orait',
+        'data_inicio_trabalhos',
+        'data_fim_trabalhos',
+        'anexos',
+        'data_envio_licenciamento_municipio',
+        'referencia_licenciamento_munipicio',
+        'data_autorizacao_municipio',
+        'data_envio_autorizacao_operador',
+        'observacoes',
+        'is_admin'
     ];
 
     public function infraestruturas(){
@@ -38,6 +40,5 @@ class Licenciamento extends Model
         return $this->belongsTo('App\Models\User');
 
     }
-
 
 }
