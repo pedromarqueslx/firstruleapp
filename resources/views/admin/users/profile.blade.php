@@ -430,12 +430,10 @@
                 </div>
             </div>
 
-            <div class="row mb-2">
-                <div class="col text-center">
-                    {{-- <input name="_token" type="hidden" value="{{ csrf_token() }}"/> --}}
-                    <input type="submit" name="submit" value="Guardar" class="btn btn-success mx-auto d-block">
-                </div>
-            </div>
+            <input type="submit" name="submit" value="Guardar" class="btn btn-success mx-auto d-block">
+
+            {{-- <input name="_token" type="hidden" value="{{ csrf_token() }}"/> --}}
+
         </form>
         {{--
         <form method="post" action="/infraestruturas/{{$infraestruturas->id}}">

@@ -51,12 +51,10 @@ class InfraestruturasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Concessoe $concessoes)
+    public function create()
     {
 
         $concessoes = Concessoe::all();
-        //return view('infraestruturas.index', ['infraestruturas' => $infraestruturas]);
-
         return view('infraestruturas.create', ['concessoes' => $concessoes]);
 
     }
