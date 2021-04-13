@@ -205,16 +205,16 @@ class InfraestruturasController extends Controller
             'cvp' =>  '',
             'observacoes' =>  '',
 
-            //'metragem',
-            //'quantidade_equipamentos' =>  '',
-            //'quantidade_pontos_entrada' =>  '',
-            //'observacoes_resposta' =>  '',
-            //'resposta' =>  '',
-            //'data_resposta_licenciamento' =>  '',
-            //'data_pedido_acesso' =>  '',
-            //'data_resposta_acesso' =>  '',
-            //'data_pedido_cadastro' =>  '',
-            //'data_resposta_cadastro' =>  '',
+            'metragem' =>  '',
+            'quantidade_equipamentos' =>  '',
+            'quantidade_pontos_entrada' =>  '',
+            'observacoes_resposta' =>  '',
+            'resposta' =>  '',
+            'data_resposta_licenciamento' =>  '',
+            'data_pedido_acesso' =>  '',
+            'data_resposta_acesso' =>  '',
+            'data_pedido_cadastro' =>  '',
+            'data_resposta_cadastro' =>  ''
 
         ]);
 

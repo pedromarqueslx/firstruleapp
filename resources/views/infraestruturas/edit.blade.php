@@ -1,34 +1,104 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Pedido de Disponibilidade</h1>
+    <h1>Resposta ao Pedido de Disponibilidade</h1>
     <p class="small">Ref. {{$infraestruturas->referencia_orait}}</p>
 
     @if(auth()->user()->userHasRole('Admin'))
-
     <div class="card">
         <div class="card-block px-3 py-4">
+
             <div class="row mb-2">
                 <div class="col-md-3 mb-3 required">
-                    <label for="referencia_operador">Referência Operador</label>
-                    <input type="text" class="form-control" name="referencia_operador" id="referencia_operador" value="{{$infraestruturas->referencia_operador}}" readonly>
+                    <label for="metragem">Metragem das condutas</label>
+                    <input type="text" class="form-control" name="metragem" id="metragem" value="" required>
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="municipio_id">Município</label>
-                    <input class="form-control" name="municipio_id" id="municipio_id" value="{{$infraestruturas->municipio_id}}" readonly>
+                    <label for="quantidade_equipamentos">Quantidade de equipamentos ou folgas</label>
+                    <input class="form-control" name="quantidade_equipamentos" id="quantidade_equipamentos" value="">
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="municipio_cartas">Número das cartas</label>
-                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="{{$infraestruturas->municipio_cartas}}" required="">
+                    <label for="quantidade_pontos_entrada">Quantidade de pontos de entrada</label>
+                    <input type="text" class="form-control" name="quantidade_pontos_entrada" id="quantidade_pontos_entrada" value="">
                 </div>
                 <div class="col-md-3 mb-3">
-                    <label for="municipio_cartas">Número das cartas</label>
-                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="{{$infraestruturas->municipio_cartas}}" required="">
+                    <label for="municipio_cartas">Data de resposta</label>
+                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="{{$infraestruturas->municipio_cartas}}">
                 </div>
             </div>
+
+            <div class="row mb-2">
+                <div class="col-md-6 mb-3 ">
+                    <label for="observacoes_resposta">Observações</label>
+                    <textarea rows="4" cols="50" class="form-control" name="observacoes_resposta" id="observacoes_resposta"></textarea>
+                </div>
+                <div class="col-md-3 mb-3 required">
+                    <label for="resposta">Disponibilidade ao solicitado pelo Operador</label>
+                    <input class="form-control" name="resposta" id="resposta" value="" required>
+                </div>
+            </div>
+
+            <h2 class="mt-3">Disponibilidade de Infraestruturas</h2>
+
+            <div class="row mb-2">
+                <div class="col-md-1 mb-3 ml-md-2 p-md-2 text-truncate required">
+                    <label for="cvp_entrada" class="text-nowrap">CVP Entrada</label>
+                    <input type="text" class="form-control" name="cvp_entrada" id="cvp_entrada" value="{{$infraestruturas->cvp_entrada}}" required="">
+                    <div class="invalid-feedback">
+                        ...
+                    </div>
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_entrada_ponto_entrada" class="text-nowrap">P. Entrada</label>
+                    <input class="form-control" name="cvp_entrada_ponto_entrada" id="cvp_entrada_ponto_entrada" value="{{$infraestruturas->cvp_entrada_ponto_entrada}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_entrada_ponto_ligacao" class="text-nowrap">P. Ligação</label>
+                    <input type="text" class="form-control" name="cvp_entrada_ponto_ligacao" id="cvp_entrada_ponto_ligacao" value="{{$infraestruturas->cvp_entrada_ponto_ligacao}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_entrada_folga" class="text-nowrap">Folga</label>
+                    <input type="text" class="form-control" name="cvp_entrada_folga" id="cvp_entrada_folga" value="{{$infraestruturas->cvp_entrada_folga}}" placeholder="mts">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_saida" class="text-nowrap">CVP Saída</label>
+                    <input type="text" class="form-control" name="cvp_saida" id="cvp_saida" value="{{$infraestruturas->cvp_saida}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_saida_ponto_entrada" class="text-nowrap">P. Entrada</label>
+                    <input type="text" class="form-control" name="cvp_saida_ponto_entrada" id="cvp_saida_ponto_entrada" value="{{$infraestruturas->cvp_saida_ponto_entrada}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_saida_ponto_ligacao" class="text-nowrap">P. Ligação</label>
+                    <input type="text" class="form-control" name="cvp_saida_ponto_ligacao" id="cvp_saida_ponto_ligacao" value="{{$infraestruturas->cvp_saida_ponto_ligacao}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="cvp_saida_folga" class="text-nowrap">Folga</label>
+                    <input type="text" class="form-control" name="cvp_saida_folga" id="cvp_saida_folga" value="{{$infraestruturas->cvp_saida_folga}}" placeholder="(mts)">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="tipo_tubo_ponto_entrada" class="text-nowrap">Tipo Tubo no PE</label>
+                    <input type="text" class="form-control" name="tipo_tubo_ponto_entrada" id="tipo_tubo_ponto_entrada" value="{{$infraestruturas->tipo_tubo_ponto_entrada}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="tipo_cabo" class="text-nowrap">Tipo de Cabo</label>
+                    <input type="text" class="form-control" name="tipo_cabo" id="tipo_cabo" value="{{$infraestruturas->tipo_cabo}}">
+                </div>
+                <div class="col-md-1 mb-3 p-md-2 text-truncate">
+                    <label for="seccao_cabo" class="text-nowrap">Secção Cabo</label>
+                    <input type="text" class="form-control" name="seccao_cabo" id="seccao_cabo" value="{{$infraestruturas->seccao_cabo}}" placeholder="(cm2)">
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3 mb-3 required">
+                    <label for="municipio_id">Resposta de Disponibilidade</label>
+                    <input class="form-control" name="municipio_id" id="municipio_id" value="{{$infraestruturas->municipio_id}}" required>
+                </div>
+            </div>
+
         </div>
     </div>
-
     @endif
 
 
