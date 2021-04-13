@@ -26,16 +26,10 @@
                     <div class="col-md-2 mb-3 required">
                         <label for="email">E-mail</label>
                         <input class="form-control" name="email" id="email" required="">
-                        <div class="invalid-feedback">
-                            ....
-                        </div>
                     </div>
                     <div class="col-md-2 mb-3 required">
                         <label for="contribuinte">N.o Contribuinte</label>
                         <input type="text" class="form-control" name="contribuinte" id="contribuinte" required="">
-                        <div class="invalid-feedback">
-                            ....
-                        </div>
                     </div>
                     <div class="col-md-2 mb-3">
                         <label for="telefone">Telefone</label>
@@ -51,16 +45,16 @@
 
                 <div class="row mb-5">
                     <div class="col-md-3 mb-3">
-                        <label for="responsavel">Responsável</label>
+                        <label for="responsavel">Nome do Responsável</label>
                         <input type="text" class="form-control" name="responsavel" id="responsavel">
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="responsavel_telefone">Telemóvel do Responsável</label>
-                        <input class="form-control" name="responsavel_telefone" id="responsavel_telefone">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="responsavel_email">E-mail do Responsável</label>
                         <input type="text" class="form-control" name="responsavel_email" id="responsavel_email">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="responsavel_telefone">Telemóvel do Responsável</label>
+                        <input class="form-control" name="responsavel_telefone" id="responsavel_telefone">
                     </div>
                 </div>
 

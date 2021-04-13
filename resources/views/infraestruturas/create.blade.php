@@ -49,16 +49,10 @@
                             <option value="{{$concessoe->nome}}">{{$concessoe->nome}}</option>
                         @endforeach
                     </select>
-                    <div class="invalid-feedback">
-                        ....
-                    </div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="municipio_cartas">Número de cartas</label>
-                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="" required="">
-                    <div class="invalid-feedback">
-                        ....
-                    </div>
+                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="">
                 </div>
             </div>
 
@@ -66,20 +60,20 @@
 
             <div class="row mb-2">
                 <div class="col-md-3 mb-3 text-truncate">
-                    <label for="responsavel_operador">Nome do Responsável do Operador</label>
-                    <input type="text" class="form-control" name="responsavel_operador" id="responsavel_operador">
+                    <label for="responsavel_operador">Nome do Responsável</label>
+                    <input type="text" class="form-control" name="responsavel_operador" id="responsavel_operador" value="{{auth()->user()->nome_responsavel_operador}}">
                 </div>
                 <div class="col-md-3 mb-3 text-truncate">
-                    <label for="email_responsavel_operador">E-mail do Responsável do Operador</label>
-                    <input class="form-control" name="email_responsavel_operador" id="email_responsavel_operador">
+                    <label for="email_responsavel_operador">E-mail do Responsável</label>
+                    <input class="form-control" name="email_responsavel_operador" id="email_responsavel_operador" value="{{auth()->user()->email_responsavel_operador}}">
                 </div>
-                <div class="col-md-3 mb-3 text-truncate">
-                    <label for="telefone_responsavel_operador">Telefone do Responsável do Operador</label>
-                    <input type="text" class="form-control" name="telefone_responsavel_operador" id="telefone_responsavel_operador">
+                <div class="col-md-2 mb-3 text-truncate">
+                    <label for="telefone_responsavel_operador">Telefone do Responsável</label>
+                    <input type="text" class="form-control" name="telefone_responsavel_operador" id="telefone_responsavel_operador" value="{{auth()->user()->telefone_responsavel_operador}}">
                 </div>
             </div>
 
-            <h3 class="mt-3">Documentos em Anexo (PDF e KMZ)</h3>
+            <h3 class="mt-3">Documentos em Anexo <span class="small">(.pdf, .doc, .png, .jpeg)</span></h3>
 
             <div class="row mb-2">
                 <label for="file"></label>
@@ -162,21 +156,21 @@
                         ....
                     </div>
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cabo_peso">Peso</label>
                     <input type="text" class="form-control" name="cabo_peso" id="cabo_peso">
                     <div class="invalid-feedback">
                         ....
                     </div>
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cabo_diametro">Diâmetro</label>
                     <input type="text" class="form-control" name="cabo_diametro" id="cabo_diametro">
                     <div class="invalid-feedback">
                         ....
                     </div>
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cabo_seccao">Secção</label>
                     <input type="text" class="form-control" name="cabo_seccao" id="cabo_seccao">
                     <div class="invalid-feedback">
@@ -200,15 +194,15 @@
                     <label for="cvp_tipo_equipamento">Tipo de equipamento</label>
                     <input type="text" class="form-control" name="cvp_tipo_equipamento" id="cvp_tipo_equipamento" placeholder="Junta, TAP, PL, Folga">
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cvp_dimensoes">Dimensões</label>
                     <input type="text" class="form-control" name="cvp_dimensoes" id="cvp_dimensoes">
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cvp_peso">Peso</label>
                     <input type="text" class="form-control" name="cvp_peso" id="cvp_peso">
                 </div>
-                <div class="col-md-2 mb-3">
+                <div class="col-md-2 mb-3 text-truncate">
                     <label for="cvp">CVP</label>
                     <input type="text" class="form-control" name="cvp" id="cvp">
                 </div>

@@ -70,8 +70,23 @@ class InfraestruturasController extends Controller
     {
         $inputs = request()->validate([
             'referencia_orait'   =>'required|max:40',
-            'telefone_responsavel_operador' =>  '',
+            'user_name' => '',
+            'user_contribuinte' => '',
+            'user_morada' => '',
+            'user_telefone' => '',
+            'user_email' => '',
+
+            'referencia_operador'=>'required|max:40',
+            'municipio_id'       =>'required|max:40',
+            'municipio_cartas'   =>'',
+
+            'responsavel_operador' => '',
             'email_responsavel_operador' =>  '',
+            'telefone_responsavel_operador' =>  '',
+
+            'anexo'              =>'mimes:pdf,doc,png,jpeg',
+
+            'cvp_entrada'        =>'required|max:50',
             'cvp_entrada_ponto_entrada' =>  '',
             'cvp_entrada_ponto_ligacao' =>  '',
             'cvp_entrada_folga' =>  '',
@@ -95,6 +110,7 @@ class InfraestruturasController extends Controller
             'cvp_peso' =>  '',
             'cvp' =>  '',
             'observacoes' =>  '',
+
             'metragem',
             'quantidade_equipamentos' =>  '',
             'quantidade_pontos_entrada' =>  '',
@@ -104,18 +120,8 @@ class InfraestruturasController extends Controller
             'data_pedido_acesso' =>  '',
             'data_resposta_acesso' =>  '',
             'data_pedido_cadastro' =>  '',
-            'data_resposta_cadastro' =>  '',
-            'referencia_operador'=>'required|max:40',
-            'municipio_id'       =>'required|max:40',
-            'municipio_cartas'   =>'required|max:20',
-            'anexo'              =>'mimes:pdf,png,jpeg',
-            'cvp_entrada'        =>'required|max:50',
-            'responsavel_operador' => '',
-            'user_name' => '',
-            'user_contribuinte' => '',
-            'user_morada' => '',
-            'user_telefone' => '',
-            'user_email' => ''
+            'data_resposta_cadastro' =>  ''
+
         ]);
 
         if(request('anexo')){
@@ -139,7 +145,6 @@ class InfraestruturasController extends Controller
      */
      public function edit(Infraestrutura $infraestruturas)
     {
-        //$this->authorize('view', $infraestruturas);
 
         return view('infraestruturas.edit', ['infraestruturas' => $infraestruturas]);
 
@@ -155,9 +160,25 @@ class InfraestruturasController extends Controller
     public function update(Infraestrutura $infraestruturas)
     {
         $inputs = request()->validate([
-            'referencia_orait'   =>'required|max:40',
+            'referencia_orait' =>'required|max:40',
+
+            'user_name' => '',
+            'user_contribuinte' => '',
+            'user_morada' => '',
+            'user_telefone' => '',
+            'user_email' => '',
+
+            'referencia_operador'=>'required|max:40',
+            'municipio_id'       =>'required|max:40',
+            'municipio_cartas'   =>'required|max:20',
+
+            'responsavel_operador' => '',
             'telefone_responsavel_operador' =>  '',
             'email_responsavel_operador' =>  '',
+
+            'anexo'              =>'',
+
+            'cvp_entrada'        =>'required|max:50',
             'cvp_entrada_ponto_entrada' =>  '',
             'cvp_entrada_ponto_ligacao' =>  '',
             'cvp_entrada_folga' =>  '',
@@ -168,12 +189,14 @@ class InfraestruturasController extends Controller
             'tipo_tubo_ponto_entrada' =>  '',
             'tipo_cabo' =>  '',
             'seccao_cabo' =>  '',
+
             'cabo_identificacao' =>  '',
             'cabo_designacao_cabos' =>  '',
             'cabo_capacidade' =>  '',
             'cabo_peso' =>  '',
             'cabo_diametro' =>  '',
             'cabo_seccao' =>  '',
+
             'cvp_identificacao_equipamento' =>  '',
             'cvp_cabo_ligacao' =>  '',
             'cvp_tipo_equipamento' =>  '',
@@ -181,6 +204,7 @@ class InfraestruturasController extends Controller
             'cvp_peso' =>  '',
             'cvp' =>  '',
             'observacoes' =>  '',
+
             //'metragem',
             //'quantidade_equipamentos' =>  '',
             //'quantidade_pontos_entrada' =>  '',
@@ -191,17 +215,7 @@ class InfraestruturasController extends Controller
             //'data_resposta_acesso' =>  '',
             //'data_pedido_cadastro' =>  '',
             //'data_resposta_cadastro' =>  '',
-            'referencia_operador'=>'required|max:40',
-            'municipio_id'       =>'required|max:40',
-            'municipio_cartas'   =>'required|max:20',
-            'anexo'              =>'mimes:pdf,png,jpeg',
-            'cvp_entrada'        =>'required|max:50',
-            'responsavel_operador' => '',
-            'user_name' => '',
-            'user_contribuinte' => '',
-            'user_morada' => '',
-            'user_telefone' => '',
-            'user_email' => ''
+
         ]);
 
         if(request('anexo')){
@@ -210,8 +224,21 @@ class InfraestruturasController extends Controller
         }
 
         $infraestruturas->referencia_orait = $inputs['referencia_orait'];
-        $infraestruturas->telefone_responsavel_operador = $inputs['telefone_responsavel_operador'];
+        $infraestruturas->user_name = $inputs['user_name'];
+        $infraestruturas->user_contribuinte = $inputs['user_contribuinte'];
+        $infraestruturas->user_morada = $inputs['user_morada'];
+        $infraestruturas->user_telefone = $inputs['user_telefone'];
+        $infraestruturas->user_email = $inputs['user_email'];
+
+        $infraestruturas->referencia_operador = $inputs['referencia_operador'];
+        $infraestruturas->municipio_id = $inputs['municipio_id'];
+        $infraestruturas->municipio_cartas = $inputs['municipio_cartas'];
+
+        $infraestruturas->responsavel_operador = $inputs['responsavel_operador'];
         $infraestruturas->email_responsavel_operador = $inputs['email_responsavel_operador'];
+        $infraestruturas->telefone_responsavel_operador = $inputs['telefone_responsavel_operador'];
+
+        $infraestruturas->cvp_entrada = $inputs['cvp_entrada'];
         $infraestruturas->cvp_entrada_ponto_entrada = $inputs['cvp_entrada_ponto_entrada'];
         $infraestruturas->cvp_entrada_ponto_ligacao = $inputs['cvp_entrada_ponto_ligacao'];
         $infraestruturas->cvp_entrada_folga = $inputs['cvp_entrada_folga'];
@@ -222,12 +249,14 @@ class InfraestruturasController extends Controller
         $infraestruturas->tipo_tubo_ponto_entrada = $inputs['tipo_tubo_ponto_entrada'];
         $infraestruturas->tipo_cabo = $inputs['tipo_cabo'];
         $infraestruturas->seccao_cabo = $inputs['seccao_cabo'];
+
         $infraestruturas->cabo_identificacao = $inputs['cabo_identificacao'];
         $infraestruturas->cabo_designacao_cabos = $inputs['cabo_designacao_cabos'];
         $infraestruturas->cabo_capacidade = $inputs['cabo_capacidade'];
         $infraestruturas->cabo_peso = $inputs['cabo_peso'];
         $infraestruturas->cabo_diametro = $inputs['cabo_diametro'];
         $infraestruturas->cabo_seccao = $inputs['cabo_seccao'];
+
         $infraestruturas->cvp_identificacao_equipamento = $inputs['cvp_identificacao_equipamento'];
         $infraestruturas->cvp_cabo_ligacao = $inputs['cvp_cabo_ligacao'];
         $infraestruturas->cvp_tipo_equipamento = $inputs['cvp_tipo_equipamento'];
@@ -235,6 +264,7 @@ class InfraestruturasController extends Controller
         $infraestruturas->cvp_peso = $inputs['cvp_peso'];
         $infraestruturas->cvp = $inputs['cvp'];
         $infraestruturas->observacoes = $inputs['observacoes'];
+
         //$infraestruturas->metragem = $inputs['metragem'];
         //$infraestruturas->quantidade_equipamentos = $inputs['quantidade_equipamentos'];
         //$infraestruturas->quantidade_pontos_entrada = $inputs['quantidade_pontos_entrada'];
@@ -245,16 +275,6 @@ class InfraestruturasController extends Controller
         //$infraestruturas->data_resposta_acesso = $inputs['data_resposta_acesso'];
         //$infraestruturas->data_pedido_cadastro = $inputs['data_pedido_cadastro'];
         //$infraestruturas->data_resposta_cadastro = $inputs['data_resposta_cadastro'];
-        $infraestruturas->referencia_operador = $inputs['referencia_operador'];
-        $infraestruturas->municipio_id = $inputs['municipio_id'];
-        $infraestruturas->municipio_cartas = $inputs['municipio_cartas'];
-        $infraestruturas->cvp_entrada = $inputs['cvp_entrada'];
-        $infraestruturas->responsavel_operador = $inputs['responsavel_operador'];
-        $infraestruturas->user_name = $inputs['user_name'];
-        $infraestruturas->user_contribuinte = $inputs['user_contribuinte'];
-        $infraestruturas->user_morada = $inputs['user_morada'];
-        $infraestruturas->user_telefone = $inputs['user_telefone'];
-        $infraestruturas->user_email = $inputs['user_email'];
 
         $this->authorize('update', $infraestruturas);
 

@@ -50,16 +50,16 @@
 
             <div class="row mb-5">
                 <div class="col-md-3 mb-3">
-                    <label for="responsavel">Responsável</label>
+                    <label for="responsavel">Nome do Responsável</label>
                     <input type="text" class="form-control" name="responsavel" id="responsavel" value="{{$concessoes->responsavel}}">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="responsavel_telefone">Telemóvel do Responsável</label>
-                    <input class="form-control" name="responsavel_telefone" id="responsavel_telefone" value="{{$concessoes->responsavel_telefone}}">
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="responsavel_email">E-mail do Responsável</label>
                     <input type="text" class="form-control" name="responsavel_email" id="responsavel_email" value="{{$concessoes->responsavel_email}}">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="responsavel_telefone">Telemóvel do Responsável</label>
+                    <input class="form-control" name="responsavel_telefone" id="responsavel_telefone" value="{{$concessoes->responsavel_telefone}}">
                 </div>
             </div>
 

@@ -410,25 +410,27 @@
 
             <div class="row mb-2">
                 <div class="col-md-3 mb-2">
-                    <label for="nome_responsavel_operador">Nome do Responsável do Operador</label>
+                    <label for="nome_responsavel_operador">Nome do Responsável</label>
                     <input type="text" class="form-control" name="nome_responsavel_operador" id="nome_responsavel_operador" value="{{$user->nome_responsavel_operador}}">
                 </div>
                 <div class="col-md-3 mb-2">
-                    <label for="email_responsavel_operador">E-mail do Responsável do Operador</label>
+                    <label for="email_responsavel_operador">E-mail do Responsável</label>
                     <input type="text" class="form-control" name="email_responsavel_operador" id="email_responsavel_operador" value="{{$user->email_responsavel_operador}}">
                 </div>
                 <div class="col-md-3 mb-2">
-                    <label for="telefone_responsavel_operador">Telefone do Responsável do Operador</label>
+                    <label for="telefone_responsavel_operador">Telefone do Responsável</label>
                     <input type="text" class="form-control" name="telefone_responsavel_operador" id="telefone_responsavel_operador" value="{{$user->telefone_responsavel_operador}}">
                 </div>
             </div>
 
+            <p class="small"><a href="{{$user->anexos}}" target="_blank"><span class="pcoded-micon"><i class="feather icon-file-minus"></i></span> Anexo</a></p>
+{{--
             <div class="row mb-2">
                 <div class="col-md-3 mb-2">
                     <p><a href="{{$user->anexos}}" target="_blank">anexo</a></p>
                     <input type="file" class="" name="anexos">
                 </div>
-            </div>
+            </div>--}}
 
             <input type="submit" name="submit" value="Guardar" class="btn btn-success mx-auto d-block">
 

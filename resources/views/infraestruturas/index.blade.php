@@ -51,18 +51,18 @@
                     @foreach($infraestruturas as $infraestrutura)
                         <tr>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->user_name}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->resposta}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_acesso}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_acesso}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_cadastro}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_cadastro}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->municipio_id}}</a></td>
-                            <td><a href="{{route('infraestruturas.show', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->user_name}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->resposta}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_acesso}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_acesso}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_cadastro}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_cadastro}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->municipio_id}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
                         </tr>
                     @endforeach
                     </tbody>

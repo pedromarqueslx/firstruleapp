@@ -410,15 +410,15 @@
 
                 <div class="row mb-2">
                     <div class="col-md-3 mb-2">
-                        <label for="nome_responsavel_operador">{{ __('auth.Resp Operator Name') }}</label>
+                        <label for="nome_responsavel_operador">Nome do Responsável</label>
                         <input id="nome_responsavel_operador" type="text" class="form-control" name="nome_responsavel_operador" value="{{ old('nome_responsavel_operador') }}" >
                     </div>
                     <div class="col-md-3 mb-2">
-                        <label for="email_responsavel_operador">{{ __('auth.Resp Operator Email') }}</label>
+                        <label for="email_responsavel_operador">E-mail do Responsável</label>
                         <input id="email_responsavel_operador" type="text" class="form-control" name="email_responsavel_operador" value="{{ old('email_responsavel_operador') }}" >
                     </div>
                     <div class="col-md-3 mb-2">
-                        <label for="telefone_responsavel_operador">{{ __('auth.Resp Operator Phone') }}</label>
+                        <label for="telefone_responsavel_operador">Telefone do Responsável</label>
                         <input id="telefone_responsavel_operador" type="text" class="form-control" name="telefone_responsavel_operador" value="{{ old('telefone_responsavel_operador') }}" >
                     </div>
                 </div>
