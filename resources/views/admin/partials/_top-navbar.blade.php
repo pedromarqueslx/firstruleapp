@@ -16,8 +16,8 @@
                         <span>{{ Auth::user()->name }}</span>
                     </div>
                     <ul class="pro-body">
-                        <li><a href="" class="dropdown-item"><i class="feather icon-settings"></i> Roles</a></li>
-                        <li><a href="" class="dropdown-item"><i class="feather icon-settings"></i> Permissões</a></li>
+                        <li><a href="{{route('roles.index')}}" class="dropdown-item"><i class="feather icon-settings"></i> Roles</a></li>
+                        <li><a href="{{route('permissions.index')}}" class="dropdown-item"><i class="feather icon-settings"></i> Permissões</a></li>
 
                         <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-user"></i>Dados de Operador</a></li>
                         <li>
