@@ -16,21 +16,25 @@ class CreateInfraestruturasTable extends Migration
         Schema::create('infraestruturas', function (Blueprint $table) {
             $table->increments('id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            //$table->integer('user_id')->nullable($value = true);
+
             $table->string('referencia_orait')->nullable($value = true);
             $table->string('user_name')->nullable($value = true);
             $table->string('user_contribuinte')->nullable($value = true);
             $table->string('user_morada')->nullable($value = true);
             $table->string('user_telefone')->nullable($value = true);
             $table->string('user_email')->nullable($value = true);
-            $table->string('email_operador')->nullable($value = true);
+
             $table->string('referencia_operador')->nullable($value = true);
+            $table->string('municipio_id')->nullable($value = true);
+            $table->string('municipio_cartas')->nullable($value = true);
+
+            $table->string('email_operador')->nullable($value = true);
             $table->string('responsavel_operador')->nullable($value = true);
             $table->string('telefone_responsavel_operador')->nullable($value = true);
             $table->string('email_responsavel_operador')->nullable($value = true);
-            $table->string('municipio_id')->nullable($value = true);
-            $table->string('municipio_cartas')->nullable($value = true);
+
             $table->string('anexo')->nullable($value = true);
+
             $table->string('cvp_entrada')->nullable($value = true);
             $table->string('cvp_entrada_ponto_entrada')->nullable($value = true);
             $table->string('cvp_entrada_ponto_ligacao')->nullable($value = true);
@@ -42,12 +46,14 @@ class CreateInfraestruturasTable extends Migration
             $table->string('tipo_tubo_ponto_entrada')->nullable($value = true);
             $table->string('tipo_cabo')->nullable($value = true);
             $table->string('seccao_cabo')->nullable($value = true);
+
             $table->string('cabo_identificacao')->nullable($value = true);
             $table->string('cabo_designacao_cabos')->nullable($value = true);
             $table->string('cabo_capacidade')->nullable($value = true);
             $table->string('cabo_peso')->nullable($value = true);
             $table->string('cabo_diametro')->nullable($value = true);
             $table->string('cabo_seccao')->nullable($value = true);
+
             $table->string('cvp_identificacao_equipamento')->nullable($value = true);
             $table->string('cvp_cabo_ligacao')->nullable($value = true);
             $table->string('cvp_tipo_equipamento')->nullable($value = true);
@@ -55,16 +61,21 @@ class CreateInfraestruturasTable extends Migration
             $table->string('cvp_peso')->nullable($value = true);
             $table->string('cvp')->nullable($value = true);
             $table->text('observacoes')->nullable($value = true);
+
             $table->string('metragem')->nullable($value = true);
             $table->string('quantidade_equipamentos')->nullable($value = true);
             $table->string('quantidade_pontos_entrada')->nullable($value = true);
+            $table->string('data_resposta_pedido_disponibilidade')->nullable($value = true);
             $table->text('observacoes_resposta')->nullable($value = true);
             $table->text('resposta')->nullable($value = true);
+            $table->text('resposta_disponibilidade')->nullable($value = true);
+
             $table->date('data_resposta_licenciamento')->nullable($value = true);
             $table->date('data_pedido_acesso')->nullable($value = true);
             $table->date('data_resposta_acesso')->nullable($value = true);
             $table->date('data_pedido_cadastro')->nullable($value = true);
             $table->date('data_resposta_cadastro')->nullable($value = true);
+
             $table->softDeletes();
             $table->integer('is_admin')->default(0);
             $table->timestamps();

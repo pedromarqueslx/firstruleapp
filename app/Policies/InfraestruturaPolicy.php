@@ -30,9 +30,7 @@ class InfraestruturaPolicy
      */
     public function view(User $user, Infraestrutura $infraestrutura)
     {
-
         return $user->id === $infraestrutura->user_id;
-
     }
 
     /**

@@ -23,19 +23,25 @@ class InfraestruturaFactory extends Factory
     {
         return [
             'user_id' => $this->faker->randomDigit,
+
             'referencia_orait' => $this->faker->randomDigit,
             'user_name' => $this->faker->name,
             'user_contribuinte' => $this->faker->bankAccountNumber,
             'user_morada' => $this->faker->address,
             'user_telefone' => $this->faker->e164PhoneNumber,
             'user_email' => $this->faker->companyEmail,
+
             'referencia_operador' => $this->faker->randomDigit,
+            'municipio_id' => $this->faker->randomDigit,
+            'municipio_cartas' => $this->faker->randomDigit,
+
+            'email_operador' => $this->faker->companyEmail,
             'responsavel_operador' => $this->faker->name,
             'telefone_responsavel_operador' => $this->faker->e164PhoneNumber,
             'email_responsavel_operador' => $this->faker->companyEmail,
-            'municipio_id' => $this->faker->randomDigit,
-            'municipio_cartas' => $this->faker->randomDigit,
+
             'anexo'=> $this->faker->imageUrl($width = 640, $height = 480),
+
             'cvp_entrada' => $this->faker->randomDigit,
             'cvp_entrada_ponto_entrada' => $this->faker->randomDigit,
             'cvp_entrada_ponto_ligacao' => $this->faker->randomDigit,
@@ -47,12 +53,14 @@ class InfraestruturaFactory extends Factory
             'tipo_tubo_ponto_entrada' => $this->faker->randomDigit,
             'tipo_cabo' => $this->faker->randomDigit,
             'seccao_cabo' => $this->faker->randomDigit,
+
             'cabo_identificacao' => $this->faker->randomDigit,
             'cabo_designacao_cabos' => $this->faker->randomDigit,
             'cabo_capacidade' => $this->faker->randomDigit,
             'cabo_peso' => $this->faker->randomDigit,
             'cabo_diametro' => $this->faker->randomDigit,
             'cabo_seccao' => $this->faker->randomDigit,
+
             'cvp_identificacao_equipamento' => $this->faker->randomDigit,
             'cvp_cabo_ligacao' => $this->faker->randomDigit,
             'cvp_tipo_equipamento' => $this->faker->randomDigit,
@@ -60,11 +68,15 @@ class InfraestruturaFactory extends Factory
             'cvp_peso' => $this->faker->randomDigit,
             'cvp' => $this->faker->randomDigit,
             'observacoes' => $this->faker->sentence,
+
             'metragem' => $this->faker->randomDigit,
             'quantidade_equipamentos' => $this->faker->randomDigit,
             'quantidade_pontos_entrada' => $this->faker->randomDigit,
+            'data_resposta_pedido_disponibilidade' => $this->faker->dateTime,
             'observacoes_resposta' => $this->faker->sentence,
             'resposta' => $this->faker->randomDigit,
+            'resposta_disponibilidade' => $this->faker->randomDigit,
+
             'data_resposta_licenciamento' => $this->faker->dateTime,
             'data_pedido_acesso' => $this->faker->dateTime,
             'data_resposta_acesso' => $this->faker->dateTime,

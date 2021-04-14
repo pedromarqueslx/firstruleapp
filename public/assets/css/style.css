@@ -279,7 +279,7 @@ p.text-muted {
   margin-top: 0;
 }
 .card .card-header .card-header-right .dropdown-menu li a {
-  font-size: 14px;
+  font-size: 12px;
   text-transform: capitalize;
 }
 .card .card-header .card-header-right .btn.dropdown-toggle {
@@ -1880,7 +1880,7 @@ p.text-muted {
 }
 .pcoded-header .dropdown .dropdown-menu li a {
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .pcoded-header .dropdown .dropdown-menu li.active a, .pcoded-header .dropdown .dropdown-menu li:active a, .pcoded-header .dropdown .dropdown-menu li:focus a, .pcoded-header .dropdown .dropdown-menu li:hover a {
   color: #888;
@@ -2001,7 +2001,7 @@ p.text-muted {
 }
 .pcoded-header .dropdown .profile-notification .pro-body li a {
   color: #888;
-  font-size: 14px;
+  font-size: 12px;
   padding: 10px 20px;
 }
 .pcoded-header .dropdown .profile-notification .pro-body li a i {
@@ -2015,6 +2015,10 @@ p.text-muted {
 }
 .pcoded-header .dropdown.drp-user.show:before {
   color: #027BCA;
+}
+
+.pro-head{
+  font-size: 12px;
 }
 
 /* header css end */
@@ -7461,7 +7465,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
   font-size: 45px;
 }
 .auth-wrapper .btn-auth-gen .btn-icon small {
-  font-size: 15px;
+  font-size: 12px;
 }
 .auth-wrapper .input-group {
   background: transparent;
@@ -7699,7 +7703,7 @@ a.btn-theme.active {
 .btn {
   /*padding: 10px 20px;
   border-radius: 0.25rem;*/
-  font-size: 14px;
+  font-size: 12px;
 /*  margin-bottom: 5px;
   margin-right: 10px;*/
   -webkit-transition: all 0.3s ease-in-out;

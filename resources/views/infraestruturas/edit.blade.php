@@ -1,40 +1,48 @@
 @extends('layouts.menu')
 @section('content')
 
+    <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
+
+    @if(auth()->user()->userHasRole('Admin'))
+
     <h1>Resposta ao Pedido de Disponibilidade</h1>
     <p class="small">Ref. {{$infraestruturas->referencia_orait}}</p>
 
-    @if(auth()->user()->userHasRole('Admin'))
     <div class="card">
         <div class="card-block px-3 py-4">
 
             <div class="row mb-2">
-                <div class="col-md-3 mb-3 required">
+                <div class="col-md-3 mb-3 text-truncate required">
                     <label for="metragem">Metragem das condutas</label>
-                    <input type="text" class="form-control" name="metragem" id="metragem" value="" required>
+                    <input type="text" class="form-control" name="metragem" id="metragem" value="{{$infraestruturas->metragem}}" required>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-3 text-truncate">
                     <label for="quantidade_equipamentos">Quantidade de equipamentos ou folgas</label>
-                    <input class="form-control" name="quantidade_equipamentos" id="quantidade_equipamentos" value="">
+                    <input class="form-control" name="quantidade_equipamentos" id="quantidade_equipamentos" value="{{$infraestruturas->quantidade_equipamentos}}">
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-3 text-truncate">
                     <label for="quantidade_pontos_entrada">Quantidade de pontos de entrada</label>
-                    <input type="text" class="form-control" name="quantidade_pontos_entrada" id="quantidade_pontos_entrada" value="">
+                    <input type="text" class="form-control" name="quantidade_pontos_entrada" id="quantidade_pontos_entrada" value="{{$infraestruturas->quantidade_pontos_entrada}}">
                 </div>
-                <div class="col-md-3 mb-3">
-                    <label for="municipio_cartas">Data de resposta</label>
-                    <input type="text" class="form-control" name="municipio_cartas" id="municipio_cartas" value="{{$infraestruturas->municipio_cartas}}">
+                <div class="col-md-2 mb-3 text-truncate">
+                    <label for="data_resposta_pedido_disponibilidade">Data de resposta</label>
+                    <input type="text" class="form-control" name="data_resposta_pedido_disponibilidade" id="data_resposta_pedido_disponibilidade" value="{{ date('Y-m-d') }}" readonly>
                 </div>
             </div>
 
             <div class="row mb-2">
-                <div class="col-md-6 mb-3 ">
+                <div class="col-md-6 mb-3 text-truncate">
                     <label for="observacoes_resposta">Observações</label>
-                    <textarea rows="4" cols="50" class="form-control" name="observacoes_resposta" id="observacoes_resposta"></textarea>
+                    <textarea rows="4" cols="50" class="form-control" name="observacoes_resposta" id="observacoes_resposta">{{$infraestruturas->observacoes_resposta}}</textarea>
                 </div>
-                <div class="col-md-3 mb-3 required">
+                <div class="col-md-3 mb-3 text-truncate required">
                     <label for="resposta">Disponibilidade ao solicitado pelo Operador</label>
-                    <input class="form-control" name="resposta" id="resposta" value="" required>
+                    <select class="form-control" name="resposta" id="resposta" required="">
+                        <option disabled selected value="{{$infraestruturas->resposta}}">{{$infraestruturas->resposta}}</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Aprovado">Aprovado</option>
+                        <option value="Negado">Negado</option>
+                    </select>
                 </div>
             </div>
 
@@ -92,10 +100,17 @@
 
             <div class="row mb-2">
                 <div class="col-md-3 mb-3 required">
-                    <label for="municipio_id">Resposta de Disponibilidade</label>
-                    <input class="form-control" name="municipio_id" id="municipio_id" value="{{$infraestruturas->municipio_id}}" required>
+                    <label for="resposta_disponibilidade">Resposta de Disponibilidade</label>
+                    <select class="form-control" name="resposta_disponibilidade" id="resposta_disponibilidade" required="">
+                        <option disabled selected value="{{$infraestruturas->resposta_disponibilidade}}">{{$infraestruturas->resposta_disponibilidade}}</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Aprovado">Aprovado</option>
+                        <option value="Negado">Negado</option>
+                    </select>
                 </div>
             </div>
+
+            <input type="submit"  name="submit" value="Submeter Resposta de Disponibilidade" class="btn btn-success mx-auto d-block">
 
         </div>
     </div>
@@ -107,7 +122,6 @@
         <h1>Pedido de Disponibilidade</h1>
         <p class="small">Ref. {{$infraestruturas->referencia_orait}}</p>
 
-        <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
 
         <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="{{$infraestruturas->referencia_orait}}">
         <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}">
@@ -311,12 +325,10 @@
 
         <input name="_method" type="hidden" value="PATCH"/>
         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-        <input type="submit"  name="submit" value="Guardar Pedido de Disponibilidade" class="btn btn-success mx-auto d-block">
-
-        </form>
 
     </div>
 
+    </form>
 
 
 

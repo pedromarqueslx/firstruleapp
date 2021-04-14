@@ -33,6 +33,22 @@ class InfraestruturasController extends Controller
 
     }
 
+    public function acessos()
+    {
+
+        $infraestruturas = Infraestrutura::all();
+        return view('infraestruturas.acessos', ['infraestruturas' => $infraestruturas]);
+
+    }
+
+    public function cadastros()
+    {
+
+        $infraestruturas = Infraestrutura::all();
+        return view('infraestruturas.cadastros', ['infraestruturas' => $infraestruturas]);
+
+    }
+
     /**
      * Display the specified resource.
      *
@@ -208,13 +224,16 @@ class InfraestruturasController extends Controller
             'metragem' =>  '',
             'quantidade_equipamentos' =>  '',
             'quantidade_pontos_entrada' =>  '',
+            'data_resposta_pedido_disponibilidade' =>  '',
             'observacoes_resposta' =>  '',
             'resposta' =>  '',
-            'data_resposta_licenciamento' =>  '',
-            'data_pedido_acesso' =>  '',
-            'data_resposta_acesso' =>  '',
-            'data_pedido_cadastro' =>  '',
-            'data_resposta_cadastro' =>  ''
+            'resposta_disponibilidade' =>  ''
+
+            //'data_resposta_licenciamento' =>  '',
+            //'data_pedido_acesso' =>  '',
+            //'data_resposta_acesso' =>  '',
+            //'data_pedido_cadastro' =>  '',
+            //'data_resposta_cadastro' =>  ''
 
         ]);
 
@@ -265,11 +284,15 @@ class InfraestruturasController extends Controller
         $infraestruturas->cvp = $inputs['cvp'];
         $infraestruturas->observacoes = $inputs['observacoes'];
 
-        //$infraestruturas->metragem = $inputs['metragem'];
-        //$infraestruturas->quantidade_equipamentos = $inputs['quantidade_equipamentos'];
-        //$infraestruturas->quantidade_pontos_entrada = $inputs['quantidade_pontos_entrada'];
-        //$infraestruturas->observacoes_resposta = $inputs['observacoes_resposta'];
-        //$infraestruturas->resposta = $inputs['resposta'];
+        $infraestruturas->metragem = $inputs['metragem'];
+        $infraestruturas->quantidade_equipamentos = $inputs['quantidade_equipamentos'];
+        $infraestruturas->quantidade_pontos_entrada = $inputs['quantidade_pontos_entrada'];
+        $infraestruturas->data_resposta_pedido_disponibilidade = $inputs['data_resposta_pedido_disponibilidade'];
+
+        $infraestruturas->observacoes_resposta = $inputs['observacoes_resposta'];
+        $infraestruturas->resposta = $inputs['resposta'];
+        $infraestruturas->resposta_disponibilidade = $inputs['resposta_disponibilidade'];
+
         //$infraestruturas->data_resposta_licenciamento = $inputs['data_resposta_licenciamento'];
         //$infraestruturas->data_pedido_acesso = $inputs['data_pedido_acesso'];
         //$infraestruturas->data_resposta_acesso = $inputs['data_resposta_acesso'];

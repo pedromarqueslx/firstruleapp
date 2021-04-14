@@ -16,10 +16,10 @@
                         <span>{{ Auth::user()->name }}</span>
                     </div>
                     <ul class="pro-body">
-{{--
-                        <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-settings"></i> Gestão</a></li>
---}}
-                        <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-user"></i>Dados de Utilizador</a></li>
+                        <li><a href="" class="dropdown-item"><i class="feather icon-settings"></i> Roles</a></li>
+                        <li><a href="" class="dropdown-item"><i class="feather icon-settings"></i> Permissões</a></li>
+
+                        <li><a href="{{route('user.profile.show', auth()->user())}}" class="dropdown-item"><i class="feather icon-user"></i>Dados de Operador</a></li>
                         <li>
                             <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="feather icon-log-out"></i>{{ __('Logout') }}

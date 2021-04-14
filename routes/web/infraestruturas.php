@@ -20,6 +20,10 @@ Route::middleware('auth')->group(function (){
     Route::delete('infraestruturas/{infraestruturas}', 'App\Http\Controllers\InfraestruturasController@destroy')->name('infraestruturas.destroy');
     Route::patch('infraestruturas/{infraestruturas}/update', 'App\Http\Controllers\InfraestruturasController@update')->name('infraestruturas.update');
 
+    Route::get('disponibilidades/', 'App\Http\Controllers\InfraestruturasController@index')->name('infraestruturas.index');
+    Route::get('acessos/', 'App\Http\Controllers\InfraestruturasController@acessos')->name('infraestruturas.acessos');
+    Route::get('cadastros/', 'App\Http\Controllers\InfraestruturasController@cadastros')->name('infraestruturas.cadastros');
+
     //Route::resource('/acessos','App\Http\Controllers\InfraestruturasController');
     //Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
     //Route::resource('/users','App\Http\Controllers\UsersController');
