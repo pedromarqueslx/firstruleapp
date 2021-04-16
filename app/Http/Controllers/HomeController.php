@@ -25,8 +25,11 @@ class HomeController extends Controller
     public function index()
     {
 
-        $infraestruturas = Infraestrutura::all();
+        //$infraestruturas = Infraestrutura::all();
+        //$infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
+        $infraestruturas = auth()->user()->infraestruturas;
 
+        //dd($infraestruturas);
         return view('home', ['infraestruturas' => $infraestruturas]);
 
     }

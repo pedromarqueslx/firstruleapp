@@ -26,9 +26,11 @@ class LicenciamentosController extends Controller
      */
     public function index()
     {
-        $licenciamentos = Licenciamento::all();
+        //$licenciamentos = Licenciamento::all();
+        $licenciamentos = auth()->user()->licenciamentos;
+        //return view('licenciamentos.index', compact('licenciamentos'));
+        return view('licenciamentos.index', ['licenciamentos' => $licenciamentos]);
 
-        return view('licenciamentos.index', compact('licenciamentos'));
     }
 
     /**

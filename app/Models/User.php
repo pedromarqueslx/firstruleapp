@@ -65,7 +65,11 @@ class User extends Authenticatable
     }
 
     public function infraestruturas(){
-        return $this->hasMany('App\Models\Infraestrutura');
+        return $this->hasMany(Infraestrutura::class);
+    }
+
+    public function licenciamentos(){
+        return $this->hasMany(Licenciamento::class);
     }
 
     public function permissions(){

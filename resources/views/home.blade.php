@@ -1,10 +1,11 @@
 {{--@extends('layouts.app')--}}
 @extends('layouts.menu')
 @section('content')
+
     <h1>{{ __('Intervenções em Infraestruturas de Telecomunicações') }}</h1>
 
-    @if(auth()->user()->userHasRole('Admin'))
-    <!-- DataTales Example -->
+    {{--@if(auth()->user()->userHasRole('Admin'))--}}
+
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -47,7 +48,6 @@
                     </tfoot>
                     <tbody>
                          @foreach($infraestruturas as $infraestrutura)
-
                              <tr>
                                  <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
                                  <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_operador}}</a></td>
@@ -71,7 +71,8 @@
             </div>
         </div>
     </div>
-    @endif
+
+    {{--@endif--}}
 
 @endsection
 

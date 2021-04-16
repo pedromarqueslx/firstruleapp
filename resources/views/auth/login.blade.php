@@ -55,6 +55,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col text-center ml-4">
             <p class="small">{{ __('auth.Register Create Account') }}</p>

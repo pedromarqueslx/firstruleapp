@@ -28,5 +28,4 @@ Route::middleware('auth')->group(function (){
     //Route::resource('/cadastros','App\Http\Controllers\InfraestruturasController');
     //Route::resource('/users','App\Http\Controllers\UsersController');
 
-
 });

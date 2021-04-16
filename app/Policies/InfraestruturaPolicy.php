@@ -65,7 +65,7 @@ class InfraestruturaPolicy
      */
     public function delete(User $user, Infraestrutura $infraestrutura)
     {
-        //
+        return $user->id === $infraestrutura->user_id;
     }
 
     /**

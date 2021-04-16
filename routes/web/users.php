@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-
 Route::middleware('auth')->group(function (){
 
     Route::put('admin/user/{user}/update', 'App\Http\Controllers\UserController@update')->name('user.profile.update');
@@ -17,7 +16,6 @@ Route::middleware('auth')->group(function (){
     Route::delete('admin/users/{user}/destroy', 'App\Http\Controllers\UserController@destroy')->name('users.destroy');
 
 });
-
 
 Route::middleware(['role:admin','auth'])->group(function (){
 

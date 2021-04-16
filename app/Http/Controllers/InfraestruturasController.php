@@ -27,16 +27,15 @@ class InfraestruturasController extends Controller
      */
     public function index()
     {
-
-        $infraestruturas = Infraestrutura::all();
+        //$infraestruturas = Infraestrutura::all();
+        $infraestruturas = auth()->user()->infraestruturas;
         return view('infraestruturas.index', ['infraestruturas' => $infraestruturas]);
-
     }
 
     public function acessos()
     {
 
-        $infraestruturas = Infraestrutura::all();
+        $infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
         return view('infraestruturas.acessos', ['infraestruturas' => $infraestruturas]);
 
     }
@@ -44,7 +43,7 @@ class InfraestruturasController extends Controller
     public function cadastros()
     {
 
-        $infraestruturas = Infraestrutura::all();
+        $infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
         return view('infraestruturas.cadastros', ['infraestruturas' => $infraestruturas]);
 
     }
@@ -161,9 +160,9 @@ class InfraestruturasController extends Controller
      */
      public function edit(Infraestrutura $infraestruturas)
     {
+        $this->authorize('view', $infraestruturas);
 
         return view('infraestruturas.edit', ['infraestruturas' => $infraestruturas]);
-
     }
 
     /**
@@ -317,6 +316,10 @@ class InfraestruturasController extends Controller
      */
     public function destroy(Infraestrutura $infraestruturas)
     {
+
+        $this->authorize('delete', $infraestruturas);
+
+        //if(auth()->user()->id !== $infraestruturas->user-id) {}
 
         $infraestruturas->delete();
 
