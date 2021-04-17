@@ -27,9 +27,9 @@ class InfraestruturasAdminController extends Controller
      */
     public function index()
     {
-        //$infraestruturas = Infraestrutura::all();
-        $infraestruturas = auth()->user()->infraestruturas;
-        return view('infraestruturas.index', ['infraestruturas' => $infraestruturas]);
+        $infraestruturas = Infraestrutura::all();
+        //$infraestruturas = auth()->user()->infraestruturas;
+        return view('admin.infraestruturas.index', ['infraestruturas' => $infraestruturas]);
     }
 
     public function acessos()
@@ -160,9 +160,7 @@ class InfraestruturasAdminController extends Controller
      */
      public function edit(Infraestrutura $infraestruturas)
     {
-        $this->authorize('view', $infraestruturas);
-
-        return view('infraestruturas.edit', ['infraestruturas' => $infraestruturas]);
+        return view('admin.infraestruturas.edit', ['infraestruturas' => $infraestruturas]);
     }
 
     /**
@@ -298,13 +296,12 @@ class InfraestruturasAdminController extends Controller
         //$infraestruturas->data_pedido_cadastro = $inputs['data_pedido_cadastro'];
         //$infraestruturas->data_resposta_cadastro = $inputs['data_resposta_cadastro'];
 
-        $this->authorize('update', $infraestruturas);
 
         $infraestruturas->update();
 
         session()->flash('message', $inputs['referencia_orait'] . ' - Atualizado com sucesso');
 
-        return redirect()->route('infraestruturas.index');
+        return redirect()->route('admin.infraestruturas.index');
 
     }
 

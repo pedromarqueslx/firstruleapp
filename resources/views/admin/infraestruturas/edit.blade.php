@@ -1,7 +1,7 @@
 @extends('layouts.menu')
 @section('content')
 
-    <form method="post" action="{{route('infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('admin.infraestruturas.update', $infraestruturas->id)}}" enctype="multipart/form-data">
 
     @if(auth()->user()->userHasRole('Admin'))
 
