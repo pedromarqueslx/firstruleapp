@@ -23,6 +23,14 @@ Route::middleware(['role:admin','auth'])->group(function (){
     Route::put('/users/{user}/attach', 'App\Http\Controllers\UserController@attach')->name('user.role.attach');
     Route::put('/users/{user}/detach', 'App\Http\Controllers\UserController@detach')->name('user.role.detach');
 
+    Route::get('/admin/home', 'App\Http\Controllers\HomeAdminController@index')->name('admin.home');
+
+    Route::get('admin/infraestruturas/', 'App\Http\Controllers\InfraestruturasAdminController@index')->name('admin.infraestruturas.index');
+
+    Route::get('admin/licenciamentos', 'App\Http\Controllers\LicenciamentosAdminController@index')->name('admin.licenciamentos.index');
+    Route::get('admin/licenciamentos/edit/{licenciamentos}', 'App\Http\Controllers\LicenciamentosAdminController@edit')->name('admin.licenciamentos.edit');
+    Route::patch('admin/licenciamentos/{infraestruturas}/update', 'App\Http\Controllers\LicenciamentosAdminController@update')->name('admin.licenciamentos.update');
+
 });
 
 Route::middleware(['can:view,user'])->group(function (){
