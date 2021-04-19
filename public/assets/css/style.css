@@ -2851,7 +2851,7 @@ p.text-muted {
 .pcoded-content {
   position: relative;
   display: block;
-  padding: 30px;
+  padding: 20px 30px 30px 30px;
 }
 
 .pcoded-main-container {
@@ -6943,6 +6943,7 @@ pre[class*=language-]:after, pre[class*=language-]:before {
   background: #F1F9FF;
   padding: 5px 5px;
   font-size: 11px;
+  margin: 0.2rem;
 }
 .custom-select:focus,
 .form-control:focus {

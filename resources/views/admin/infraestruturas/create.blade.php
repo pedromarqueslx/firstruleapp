@@ -23,7 +23,7 @@
     <div class="card">
         <div class="card-block px-3 py-4">
 
-        <form method="post" action="{{route('infraestruturas.store')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('admin.infraestruturas.store')}}" enctype="multipart/form-data">
 
             <input type="hidden" class="form-control" name="referencia_orait" id="referencia_orait" value="" placeholder="">
             <input type="hidden" class="form-control" name="user_name" id="user_name" value="{{auth()->user()->name}}" placeholder="">

@@ -147,7 +147,7 @@ class InfraestruturasAdminController extends Controller
 
         session()->flash('message', $inputs['referencia_orait'] . ' - Pedido criado com sucesso');
 
-        return redirect()->route('infraestruturas.index');
+        return redirect()->route('admin.infraestruturas.index');
 
     }
 

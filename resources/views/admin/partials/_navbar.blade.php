@@ -30,7 +30,7 @@
                 <li data-username="" class="nav-item pcoded-hasmenu @if(str_contains(url()->current(), '/infraestruturas')) active @endif @if(str_contains(url()->current(), '/infraestrutura')) active @endif @if(str_contains(url()->current(), '/disponibilidades')) active @endif">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Disponibilidades</span></a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{{route('infraestruturas.create')}}" class="">Novo Pedido</a></li>
+                        <li class=""><a href="{{route('admin.infraestruturas.create')}}" class="">Novo Pedido</a></li>
                         <li class=""><a href="{{route('admin.infraestruturas.index')}}" class="">Consultar Pedidos</a></li>
                     </ul>
                 </li>
