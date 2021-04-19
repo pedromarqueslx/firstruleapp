@@ -70,6 +70,12 @@
 @section('scripts')
     <script src="{{asset('/assets/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/assets/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/dataTables.buttons.js')}}"></script>
+    <script src="{{asset('/assets/datatables/jszip.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/pdfmake.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/vfs_fonts.js')}}"></script>
+    <script src="{{asset('/assets/datatables/buttons.html5.js')}}"></script>
+    <script src="{{asset('/assets/datatables/buttons.print.js')}}"></script>
     <script src="{{asset('/assets/js/demo/datatables-demo.js')}}"></script>
 @endsection
 

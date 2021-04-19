@@ -12,7 +12,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="users-table">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Nome</th>
@@ -59,13 +59,16 @@
 @endsection
 
 @section('scripts')
-    <!-- Page level plugins -->
     <script src="{{asset('/assets/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/assets/datatables/dataTables.bootstrap4.min.js')}}"></script>
-    <!-- Page level custom scripts -->
+    <script src="{{asset('/assets/datatables/dataTables.buttons.js')}}"></script>
+    <script src="{{asset('/assets/datatables/jszip.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/pdfmake.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/vfs_fonts.js')}}"></script>
+    <script src="{{asset('/assets/datatables/buttons.html5.js')}}"></script>
+    <script src="{{asset('/assets/datatables/buttons.print.js')}}"></script>
     <script src="{{asset('/assets/js/demo/datatables-demo.js')}}"></script>
 @endsection
 
-
 @section('footer')
-@stop
+@endsection

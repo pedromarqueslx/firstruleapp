@@ -29,6 +29,9 @@ class HomeController extends Controller
         //$infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
         $infraestruturas = auth()->user()->infraestruturas;
 
+        if(auth()->user()->userHasRole('Admin')){
+            return view('admin.home', ['infraestruturas' => $infraestruturas]);
+        }
         //dd($infraestruturas);
         return view('home', ['infraestruturas' => $infraestruturas]);
 

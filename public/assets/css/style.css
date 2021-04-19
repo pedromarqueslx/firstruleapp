@@ -10653,15 +10653,14 @@ a.dt-button {
   display: inline-block;
   float: left;
   text-align: left;
-  margin-top: 20px;
-
+  margin-top: 23px;
 }
 
 .dataTables_length {
   display: inline;
   float: left;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .dataTables_wrapper .dataTables_filter {
