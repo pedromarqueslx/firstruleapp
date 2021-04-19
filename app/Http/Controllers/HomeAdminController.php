@@ -30,13 +30,11 @@ class HomeAdminController extends Controller
         //$infraestruturas = auth()->user()->infraestruturas;
 
         //dd($infraestruturas);
-        return view('home', ['infraestruturas' => $infraestruturas]);
+        return view('admin.home', ['infraestruturas' => $infraestruturas]);
 
     }
-/*
-    public function show(Infraestrutura $infraestrutura){
 
+    /*public function show(Infraestrutura $infraestrutura){
         return view('infraestruturas', ['infraestrutura' => $infraestrutura]);
-
     }*/
 }

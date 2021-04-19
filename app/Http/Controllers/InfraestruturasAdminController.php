@@ -35,8 +35,9 @@ class InfraestruturasAdminController extends Controller
     public function acessos()
     {
 
-        $infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
-        return view('infraestruturas.acessos', ['infraestruturas' => $infraestruturas]);
+        //$infraestruturas = auth()->user()->infraestruturas->where('resposta', '=', 'Pendente');
+        $infraestruturas = Infraestrutura::all()->where('resposta', '=', 'Pendente');
+        return view('admin.infraestruturas.acessos', ['infraestruturas' => $infraestruturas]);
 
     }
 
@@ -70,7 +71,7 @@ class InfraestruturasAdminController extends Controller
     {
 
         $concessoes = Concessoe::all();
-        return view('infraestruturas.create', ['concessoes' => $concessoes]);
+        return view('admin.infraestruturas.create', ['concessoes' => $concessoes]);
 
     }
 

@@ -1,13 +1,18 @@
 @extends('layouts.menu')
 @section('content')
 
-    <h1>Admin {{ __('Infraestruturas de Telecomunicações') }}</h1>
-
+    <h1>Atualização de Cadastro</h1>
+{{--
+    <p><a href="{{route('infraestruturas.edit', $infraestruturas->id)}}">{{$infraestruturas->referencia_orait}}</a></p>
+--}}
+    @if(session('message'))
+        <div class="alert alert-success">{{session('message')}}</div>
+    @endif
+    <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                {{--table-striped display--}}
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0px">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Ref.ORAIT</th>
@@ -20,6 +25,7 @@
                         <th>Acesso Resp.</th>
                         <th>Instalação</th>
                         <th>Cadastro</th>
+                        <th>Dossier</th>
                         <th>Município</th>
                         <th>Estado</th>
                     </tr>
@@ -36,6 +42,7 @@
                         <th>Acesso Resp.</th>
                         <th>Instalação</th>
                         <th>Cadastro</th>
+                        <th>Dossier</th>
                         <th>Município</th>
                         <th>Estado</th>
                     </tr>
@@ -48,13 +55,14 @@
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->created_at}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->user_name}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
-                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->responsavel_operador}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->resposta}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_acesso}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_acesso}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_pedido_cadastro}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->data_resposta_cadastro}}</a></td>
                             <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->municipio_id}}</a></td>
+                            <td><a href="{{route('infraestruturas.edit', $infraestrutura->id)}}">{{$infraestrutura->referencia_orait}}</a></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -66,17 +74,11 @@
 @endsection
 
 @section('scripts')
-<script src="{{asset('/assets/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('/assets/datatables/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('/assets/datatables/dataTables.buttons.js')}}"></script>
-<script src="{{asset('/assets/datatables/jszip.min.js')}}"></script>
-<script src="{{asset('/assets/datatables/pdfmake.min.js')}}"></script>
-
-<script src="{{asset('/assets/datatables/vfs_fonts.js')}}"></script>
-<script src="{{asset('/assets/datatables/buttons.html5.js')}}"></script>
-<script src="{{asset('/assets/datatables/buttons.print.js')}}"></script>
-
-<script src="{{asset('/assets/js/demo/datatables-demo.js')}}"></script>
+    <!-- Page level plugins -->
+    <script src="{{asset('/assets/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/assets/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <!-- Page level custom scripts -->
+    <script src="{{asset('/assets/js/demo/datatables-demo.js')}}"></script>
 @endsection
 
 @section('footer')

@@ -31,6 +31,8 @@ Route::middleware(['role:admin','auth'])->group(function (){
     Route::get('admin/infraestruturas/edit/{infraestruturas}', 'App\Http\Controllers\InfraestruturasAdminController@edit')->name('admin.infraestruturas.edit');
     Route::patch('admin/infraestruturas/{infraestruturas}/update', 'App\Http\Controllers\InfraestruturasAdminController@update')->name('admin.infraestruturas.update');
 
+    Route::get('admin/acessos/', 'App\Http\Controllers\InfraestruturasAdminController@acessos')->name('admin.infraestruturas.acessos');
+    Route::get('admin/cadastros/', 'App\Http\Controllers\InfraestruturasAdminController@cadastros')->name('admin.infraestruturas.cadastros');
 
     Route::get('admin/licenciamentos', 'App\Http\Controllers\LicenciamentosAdminController@index')->name('admin.licenciamentos.index');
     Route::get('admin/licenciamentos/edit/{licenciamentos}', 'App\Http\Controllers\LicenciamentosAdminController@edit')->name('admin.licenciamentos.edit');

@@ -44,21 +44,25 @@
                 </li>
                 @endif
 
+                @if(auth()->user()->userHasRole('Admin'))
+                <li data-username="" class="nav-item @if(str_contains(url()->current(), '/acessos')) active @endif ">
+                    <a href="{{route('admin.infraestruturas.acessos')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
+                </li>
+                @else
                 <li data-username="" class="nav-item @if(str_contains(url()->current(), '/acessos')) active @endif ">
                     <a href="{{ url('/acessos')}}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Acessos</span></a>
-{{--                    <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/acessos/create')}}" class="">Novo Pedido</a></li>
-                        <li class=""><a href="{{ url('/acessos')}}" class="">Consultar Acessos</a></li>
-                    </ul>--}}
                 </li>
+                @endif
 
+                @if(auth()->user()->userHasRole('Admin'))
+                <li data-username="" class="nav-item @if(str_contains(url()->current(), '/cadastros')) active @endif">
+                    <a href="{{route('admin.infraestruturas.cadastros')}}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
+                </li>
+                @else
                 <li data-username="" class="nav-item @if(str_contains(url()->current(), '/cadastros')) active @endif">
                     <a href="{{ url('/cadastros')}}" class="nav-link"><span class="pcoded-micon"><i class="feather icon-map"></i></span><span class="pcoded-mtext">Cadastros</span></a>
-{{--                    <ul class="pcoded-submenu">
-                        <li class=""><a href="{{ url('/cadastros/create')}}" class="">Novo Cadastro</a></li>
-                        <li class=""><a href="{{ url('/cadastros')}}" class="">Consultar Cadastros</a></li>
-                    </ul>--}}
                 </li>
+                @endif
 
                 @if(auth()->user()->userHasRole('Admin'))
                 <li data-username="" class="nav-item @if(str_contains(url()->current(), '/operadores')) active @endif @if(str_contains(url()->current(), '/users')) active @endif">
